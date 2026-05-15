@@ -62,6 +62,19 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -146,6 +159,57 @@
       </div>
     </div>
   </div>
+
+  <!-- AI自動生成 仕組み図 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="720" height="180" rx="12" fill="#1A202C"/>
+      <text x="360" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#A0AEC0" letter-spacing="2">PHASE 3 — AI 自動生成の仕組み</text>
+      <!-- 面談 -->
+      <rect x="20" y="44" width="100" height="56" rx="8" fill="#276749"/>
+      <text x="70" y="68" text-anchor="middle" font-size="18">🎥</text>
+      <text x="70" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="white">面談終了</text>
+      <text x="70" y="97" text-anchor="middle" font-size="9" fill="#9AE6B4">Meet録音停止</text>
+      <!-- 矢印 -->
+      <text x="142" y="75" text-anchor="middle" font-size="16" fill="#4A5568">→</text>
+      <!-- Drive保存 -->
+      <rect x="157" y="44" width="100" height="56" rx="8" fill="#2D3748" stroke="#553C9A" stroke-width="1.5"/>
+      <text x="207" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#D6BCFA">自動</text>
+      <text x="207" y="80" text-anchor="middle" font-size="10" fill="#90CDF4">Meet が</text>
+      <text x="207" y="94" text-anchor="middle" font-size="10" fill="#90CDF4">Drive保存</text>
+      <!-- 矢印 -->
+      <text x="279" y="75" text-anchor="middle" font-size="16" fill="#4A5568">→</text>
+      <!-- GAS検知 -->
+      <rect x="294" y="44" width="100" height="56" rx="8" fill="#2D3748" stroke="#553C9A" stroke-width="1.5"/>
+      <text x="344" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#D6BCFA">自動</text>
+      <text x="344" y="80" text-anchor="middle" font-size="10" fill="#90CDF4">GAS が</text>
+      <text x="344" y="94" text-anchor="middle" font-size="10" fill="#90CDF4">自動検知</text>
+      <!-- 矢印 -->
+      <text x="416" y="75" text-anchor="middle" font-size="16" fill="#4A5568">→</text>
+      <!-- マスキング -->
+      <rect x="431" y="44" width="100" height="56" rx="8" fill="#2D3748" stroke="#C05621" stroke-width="1.5"/>
+      <text x="481" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#FBD38D">自動</text>
+      <text x="481" y="80" text-anchor="middle" font-size="10" fill="#FBD38D">個人情報</text>
+      <text x="481" y="94" text-anchor="middle" font-size="10" fill="#FBD38D">マスキング</text>
+      <!-- 矢印 -->
+      <text x="553" y="75" text-anchor="middle" font-size="16" fill="#4A5568">→</text>
+      <!-- Gemini -->
+      <rect x="568" y="44" width="130" height="56" rx="8" fill="#C05621"/>
+      <text x="633" y="65" text-anchor="middle" font-size="18">🤖</text>
+      <text x="633" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="white">Gemini が</text>
+      <text x="633" y="96" text-anchor="middle" font-size="10" fill="#FEEBC8">記録自動生成</text>
+      <!-- 下段：スタッフ確認 -->
+      <line x1="633" y1="100" x2="633" y2="125" stroke="#C05621" stroke-width="2"/>
+      <polygon points="633,130 627,120 639,120" fill="#C05621"/>
+      <rect x="480" y="130" width="300" height="40" rx="8" fill="#276749"/>
+      <text x="630" y="148" text-anchor="middle" font-size="11" font-weight="700" fill="white">スタッフが確認・修正して「確認済み」保存</text>
+      <text x="630" y="162" text-anchor="middle" font-size="10" fill="#9AE6B4">←ここだけ人間がやること（5〜10分）</text>
+      <!-- 全自動ラベル -->
+      <rect x="130" y="108" width="295" height="22" rx="5" fill="rgba(255,255,255,0.06)"/>
+      <text x="277" y="122" text-anchor="middle" font-size="10" fill="#718096">← この範囲は全自動（パソコンを触らなくてOK）→</text>
+    </svg>
+    <figcaption>面談が終われば、あとは5〜15分待つだけ。AIが記録の下書きを作り、Gmailで通知が届きます</figcaption>
+  </figure>
 
   <!-- Section 2: 個人情報マスキング -->
   <div class="section">
@@ -299,6 +363,29 @@
     </div>
   </div>
 
+  <!-- Mode A バックアップ SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" width="580" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="580" height="120" rx="12" fill="#FFFBEB" stroke="#F6AD55" stroke-width="2"/>
+      <text x="290" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#7B341E">エラー時のバックアップ：Mode A（手動）に戻す</text>
+      <!-- 通常ルート -->
+      <rect x="30" y="40" width="150" height="40" rx="8" fill="#C05621"/>
+      <text x="105" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="white">Phase 3（AI自動）</text>
+      <text x="200" y="63" text-anchor="middle" font-size="20" fill="#C05621">→</text>
+      <rect x="220" y="40" width="130" height="40" rx="8" fill="#FED7D7" stroke="#FC8181" stroke-width="2"/>
+      <text x="285" y="58" text-anchor="middle" font-size="11" fill="#742A2A">エラー・遅延</text>
+      <text x="285" y="72" text-anchor="middle" font-size="10" fill="#742A2A">15分以上待っても通知なし</text>
+      <!-- 下矢印 -->
+      <line x1="285" y1="80" x2="285" y2="95" stroke="#742A2A" stroke-width="2"/>
+      <polygon points="285,100 279,90 291,90" fill="#742A2A"/>
+      <text x="400" y="63" text-anchor="middle" font-size="20" fill="#C05621">→</text>
+      <rect x="420" y="40" width="140" height="40" rx="8" fill="#276749"/>
+      <text x="490" y="58" text-anchor="middle" font-size="11" font-weight="700" fill="white">Mode A で代替</text>
+      <text x="490" y="72" text-anchor="middle" font-size="10" fill="#9AE6B4">Phase 0 の手順で手動入力</text>
+    </svg>
+    <figcaption>AIが動かない時は Mode A に戻ればいつでも記録できます。AIはあくまでサポートです</figcaption>
+  </figure>
+
   <!-- Section 5: AIマネージャーの役割 -->
   <div class="section">
     <div class="section-header">
@@ -334,6 +421,15 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ Phase 3</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>

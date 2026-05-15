@@ -51,6 +51,19 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -99,6 +112,36 @@
       </div>
     </div>
   </div>
+
+  <!-- 音声記録フロー SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 140" width="700" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="700" height="140" rx="12" fill="#F0FFF4"/>
+      <text x="350" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1C4532">音声記録の3ステップ（支援後 約2分）</text>
+      <!-- Step 1 -->
+      <rect x="30" y="44" width="180" height="70" rx="10" fill="#276749"/>
+      <text x="120" y="72" text-anchor="middle" font-size="22">🎤</text>
+      <text x="120" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="white">① 話す（1〜2分）</text>
+      <text x="120" y="105" text-anchor="middle" font-size="10" fill="#9AE6B4">スマホのマイクに向けて</text>
+      <!-- 矢印 -->
+      <text x="240" y="83" text-anchor="middle" font-size="24" fill="#276749">→</text>
+      <!-- Step 2 -->
+      <rect x="265" y="44" width="180" height="70" rx="10" fill="#2D3748" stroke="#276749" stroke-width="2"/>
+      <text x="355" y="72" text-anchor="middle" font-size="22">✏️</text>
+      <text x="355" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#9AE6B4">② ざっと確認</text>
+      <text x="355" y="105" text-anchor="middle" font-size="10" fill="#718096">大きな誤りだけ直す</text>
+      <!-- 矢印 -->
+      <text x="475" y="83" text-anchor="middle" font-size="24" fill="#276749">→</text>
+      <!-- Step 3 -->
+      <rect x="500" y="44" width="170" height="70" rx="10" fill="#00A8B5"/>
+      <text x="585" y="72" text-anchor="middle" font-size="22">💾</text>
+      <text x="585" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="white">③ 保存</text>
+      <text x="585" y="105" text-anchor="middle" font-size="10" fill="#B2F5EA">Sheets に自動反映</text>
+      <!-- 下部ラベル -->
+      <text x="350" y="130" text-anchor="middle" font-size="10" fill="#276749">音声は支援直後に記録 → 記憶が正確なうちに残せます。完璧な文章でなくて大丈夫！</text>
+    </svg>
+    <figcaption>話すだけで記録が完成します。Phase 3 の AI 自動生成と連携すると、さらに記録が整います</figcaption>
+  </figure>
 
   <!-- Section 2: 音声入力の方法 -->
   <div class="section">
@@ -181,6 +224,47 @@
       </div>
     </div>
   </div>
+
+  <!-- iPhone/Android 音声入力場所 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" width="560" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="560" height="160" rx="12" fill="#F7FAFC"/>
+      <text x="280" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">マイクアイコンの場所（機種別）</text>
+      <!-- iPhone -->
+      <rect x="30" y="38" width="220" height="106" rx="10" fill="white" stroke="#276749" stroke-width="2"/>
+      <text x="140" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">iPhone の場合</text>
+      <!-- キーボード模擬 -->
+      <rect x="45" y="66" width="190" height="50" rx="6" fill="#E2E8F0"/>
+      <rect x="55" y="72" width="30" height="20" rx="4" fill="white"/><text x="70" y="86" text-anchor="middle" font-size="10" fill="#4A5568">あ</text>
+      <rect x="92" y="72" width="30" height="20" rx="4" fill="white"/><text x="107" y="86" text-anchor="middle" font-size="10" fill="#4A5568">か</text>
+      <rect x="129" y="72" width="30" height="20" rx="4" fill="white"/><text x="144" y="86" text-anchor="middle" font-size="10" fill="#4A5568">さ</text>
+      <rect x="166" y="72" width="30" height="20" rx="4" fill="white"/><text x="181" y="86" text-anchor="middle" font-size="10" fill="#4A5568">た</text>
+      <!-- マイクキー -->
+      <rect x="55" y="97" width="30" height="14" rx="4" fill="#276749"/>
+      <text x="70" y="107" text-anchor="middle" font-size="11" fill="white">🎤</text>
+      <line x1="85" y1="104" x2="120" y2="100" stroke="#276749" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="90" y="93" width="120" height="18" rx="4" fill="#F0FFF4" stroke="#276749" stroke-width="1"/>
+      <text x="150" y="105" text-anchor="middle" font-size="9" fill="#276749">← キーボード左下のマイク</text>
+      <text x="140" y="133" text-anchor="middle" font-size="10" fill="#718096">設定 → キーボード → 音声入力ON</text>
+      <!-- Android -->
+      <rect x="310" y="38" width="220" height="106" rx="10" fill="white" stroke="#1A56DB" stroke-width="2"/>
+      <text x="420" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#1A56DB">Android の場合</text>
+      <!-- キーボード模擬 -->
+      <rect x="325" y="66" width="190" height="50" rx="6" fill="#E2E8F0"/>
+      <rect x="335" y="72" width="30" height="20" rx="4" fill="white"/><text x="350" y="86" text-anchor="middle" font-size="10" fill="#4A5568">あ</text>
+      <rect x="372" y="72" width="30" height="20" rx="4" fill="white"/><text x="387" y="86" text-anchor="middle" font-size="10" fill="#4A5568">か</text>
+      <rect x="409" y="72" width="30" height="20" rx="4" fill="white"/><text x="424" y="86" text-anchor="middle" font-size="10" fill="#4A5568">さ</text>
+      <rect x="446" y="72" width="30" height="20" rx="4" fill="white"/><text x="461" y="86" text-anchor="middle" font-size="10" fill="#4A5568">た</text>
+      <!-- マイクキー -->
+      <rect x="404" y="97" width="30" height="14" rx="4" fill="#1A56DB"/>
+      <text x="419" y="107" text-anchor="middle" font-size="11" fill="white">🎤</text>
+      <line x1="404" y1="104" x2="380" y2="100" stroke="#1A56DB" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <rect x="325" y="93" width="130" height="18" rx="4" fill="#EBF8FF" stroke="#1A56DB" stroke-width="1"/>
+      <text x="390" y="105" text-anchor="middle" font-size="9" fill="#1A56DB">スペースキー左のマイク →</text>
+      <text x="420" y="133" text-anchor="middle" font-size="10" fill="#718096">「お話しください」が出たら話す</text>
+    </svg>
+    <figcaption>どちらの機種でも、キーボードのマイクアイコンをタップするだけで音声入力が始まります</figcaption>
+  </figure>
 
   <!-- Section 3: 記録の確認・管理 -->
   <div class="section">
@@ -268,6 +352,15 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ Phase 2</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>

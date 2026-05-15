@@ -40,6 +40,19 @@
   .contact-box p{font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -168,6 +181,53 @@
 
   </div>
 
+  <!-- フェーズタイムライン SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 180" width="780" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <!-- 背景 -->
+      <rect width="780" height="180" rx="12" fill="#F0F4F8"/>
+      <!-- タイトル -->
+      <text x="390" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">導入タイムライン — Phase 0 〜 3 の流れ</text>
+      <!-- 軸線 -->
+      <line x1="60" y1="90" x2="720" y2="90" stroke="#CBD5E0" stroke-width="3"/>
+      <!-- Phase 0 -->
+      <circle cx="120" cy="90" r="22" fill="#553C9A"/>
+      <text x="120" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="white">Ph.0</text>
+      <text x="120" y="128" text-anchor="middle" font-size="11" fill="#553C9A" font-weight="700">Week 1〜2</text>
+      <text x="120" y="143" text-anchor="middle" font-size="10" fill="#4A5568">GWS・録音</text>
+      <!-- 矢印 -->
+      <polygon points="192,87 178,81 178,93" fill="#CBD5E0"/>
+      <!-- Phase 1 -->
+      <circle cx="280" cy="90" r="22" fill="#1A56DB"/>
+      <text x="280" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="white">Ph.1</text>
+      <text x="280" y="128" text-anchor="middle" font-size="11" fill="#1A56DB" font-weight="700">Week 2〜4</text>
+      <text x="280" y="143" text-anchor="middle" font-size="10" fill="#4A5568">アプリ導入</text>
+      <!-- 矢印 -->
+      <polygon points="352,87 338,81 338,93" fill="#CBD5E0"/>
+      <!-- Phase 2 -->
+      <circle cx="440" cy="90" r="22" fill="#276749"/>
+      <text x="440" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="white">Ph.2</text>
+      <text x="440" y="128" text-anchor="middle" font-size="11" fill="#276749" font-weight="700">Month 2</text>
+      <text x="440" y="143" text-anchor="middle" font-size="10" fill="#4A5568">音声記録</text>
+      <!-- 矢印 -->
+      <polygon points="512,87 498,81 498,93" fill="#CBD5E0"/>
+      <!-- Phase 3 -->
+      <circle cx="600" cy="90" r="22" fill="#C05621"/>
+      <text x="600" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="white">Ph.3</text>
+      <text x="600" y="128" text-anchor="middle" font-size="11" fill="#C05621" font-weight="700">Month 2〜3</text>
+      <text x="600" y="143" text-anchor="middle" font-size="10" fill="#4A5568">AI自動生成</text>
+      <!-- 完了マーク -->
+      <circle cx="720" cy="90" r="22" fill="#00A8B5"/>
+      <text x="720" y="95" text-anchor="middle" font-size="18" fill="white">★</text>
+      <text x="720" y="143" text-anchor="middle" font-size="10" fill="#00A8B5" font-weight="700">自走運用</text>
+      <!-- 吹き出し -->
+      <rect x="60" y="38" width="120" height="30" rx="6" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+      <polygon points="120,68 113,60 127,60" fill="#EDE9FE" stroke="#553C9A" stroke-width="1" stroke-linejoin="round"/>
+      <text x="120" y="57" text-anchor="middle" font-size="10" fill="#553C9A" font-weight="700">まず効果を出す！</text>
+    </svg>
+    <figcaption>Phase 0 から順番に進めることで、業務改善効果が段階的に積み上がります</figcaption>
+  </figure>
+
   <!-- 導入ステップ概要 -->
   <div class="flow-section">
     <h2>導入の全体的な流れ</h2>
@@ -205,6 +265,52 @@
     </div>
   </div>
 
+  <!-- フェーズ依存関係 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" width="680" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="680" height="200" rx="12" fill="#F7FAFC"/>
+      <text x="340" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">各フェーズのツールと依存関係</text>
+      <!-- Phase 0 ボックス -->
+      <rect x="30" y="45" width="140" height="65" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="2"/>
+      <text x="100" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Phase 0</text>
+      <text x="100" y="86" text-anchor="middle" font-size="10" fill="#4A5568">Google Meet</text>
+      <text x="100" y="100" text-anchor="middle" font-size="10" fill="#4A5568">Gemini（手動）</text>
+      <!-- 矢印 -->
+      <line x1="170" y1="77" x2="200" y2="77" stroke="#553C9A" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- Phase 1 ボックス -->
+      <rect x="200" y="45" width="140" height="65" rx="8" fill="#DBEAFE" stroke="#1A56DB" stroke-width="2"/>
+      <text x="270" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#1A56DB">Phase 1</text>
+      <text x="270" y="86" text-anchor="middle" font-size="10" fill="#4A5568">受入れフォーム</text>
+      <text x="270" y="100" text-anchor="middle" font-size="10" fill="#4A5568">出退勤アプリ</text>
+      <!-- 矢印 -->
+      <line x1="340" y1="77" x2="370" y2="77" stroke="#1A56DB" stroke-width="2" marker-end="url(#arr2)"/>
+      <!-- Phase 2 ボックス -->
+      <rect x="370" y="45" width="140" height="65" rx="8" fill="#C6F6D5" stroke="#276749" stroke-width="2"/>
+      <text x="440" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Phase 2</text>
+      <text x="440" y="86" text-anchor="middle" font-size="10" fill="#4A5568">音声入力アプリ</text>
+      <text x="440" y="100" text-anchor="middle" font-size="10" fill="#4A5568">スマホ録音</text>
+      <!-- 矢印 -->
+      <line x1="510" y1="77" x2="540" y2="77" stroke="#276749" stroke-width="2" marker-end="url(#arr3)"/>
+      <!-- Phase 3 ボックス -->
+      <rect x="540" y="45" width="110" height="65" rx="8" fill="#FEEBC8" stroke="#C05621" stroke-width="2"/>
+      <text x="595" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#C05621">Phase 3</text>
+      <text x="595" y="86" text-anchor="middle" font-size="10" fill="#4A5568">GAS＋Gemini</text>
+      <text x="595" y="100" text-anchor="middle" font-size="10" fill="#4A5568">自動生成</text>
+      <!-- 矢印マーカー定義 -->
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#553C9A"/></marker>
+        <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1A56DB"/></marker>
+        <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#276749"/></marker>
+      </defs>
+      <!-- 前提条件の注記 -->
+      <text x="340" y="150" text-anchor="middle" font-size="11" fill="#718096">各フェーズは前のフェーズが完了してから始めます。Phase 0 だけは即日開始できます。</text>
+      <!-- オプションゾーン -->
+      <rect x="30" y="160" width="620" height="30" rx="6" fill="#EBF8FF" stroke="#BEE3F8" stroke-width="1.5"/>
+      <text x="340" y="180" text-anchor="middle" font-size="10" fill="#2C5282">オプション①（GWS管理者設定・台帳）はPhase 0 と並行して進めます ／ オプション③（コーチング）は全フェーズを通して実施</text>
+    </svg>
+    <figcaption>依存関係の図：前のフェーズの完了を確認してから次へ進んでください</figcaption>
+  </figure>
+
   <div class="contact-box">
     <p>わからないことがあれば気軽にご連絡ください。</p>
   </div>
@@ -213,6 +319,15 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ 無断転載禁止</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>

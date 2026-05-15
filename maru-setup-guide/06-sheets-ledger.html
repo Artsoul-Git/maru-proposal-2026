@@ -55,6 +55,19 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -82,6 +95,63 @@
       <li>個別支援計画の更新スケジュールを管理できる</li>
     </ul>
   </div>
+
+  <!-- 5シート構成 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 160" width="700" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="700" height="160" rx="12" fill="#F7FAFC"/>
+      <text x="350" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">利用者台帳マスター — 5シートの役割</text>
+      <!-- シート①〜⑤ -->
+      <!-- シート① -->
+      <rect x="20" y="42" width="118" height="90" rx="8" fill="#DBEAFE" stroke="#2B6CB0" stroke-width="2"/>
+      <rect x="20" y="42" width="118" height="18" rx="8" fill="#2B6CB0"/>
+      <rect x="20" y="54" width="118" height="6" rx="0" fill="#2B6CB0"/>
+      <text x="79" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="white">① 利用者マスター</text>
+      <text x="79" y="74" text-anchor="middle" font-size="10" fill="#1E3A8A">基本情報</text>
+      <text x="79" y="88" text-anchor="middle" font-size="9" fill="#4A5568">氏名・住所</text>
+      <text x="79" y="102" text-anchor="middle" font-size="9" fill="#4A5568">受給者証番号</text>
+      <text x="79" y="116" text-anchor="middle" font-size="9" fill="#4A5568">担当支援員</text>
+      <!-- シート② -->
+      <rect x="153" y="42" width="118" height="90" rx="8" fill="#C6F6D5" stroke="#276749" stroke-width="2"/>
+      <rect x="153" y="42" width="118" height="18" rx="8" fill="#276749"/>
+      <rect x="153" y="54" width="118" height="6" rx="0" fill="#276749"/>
+      <text x="212" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="white">② 出退勤記録</text>
+      <text x="212" y="74" text-anchor="middle" font-size="10" fill="#22543D">アプリ①自動</text>
+      <text x="212" y="88" text-anchor="middle" font-size="9" fill="#4A5568">出勤・退勤時刻</text>
+      <text x="212" y="102" text-anchor="middle" font-size="9" fill="#4A5568">利用時間合計</text>
+      <text x="212" y="116" text-anchor="middle" font-size="9" fill="#4A5568">月次自動集計</text>
+      <!-- シート③ -->
+      <rect x="286" y="42" width="118" height="90" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="2"/>
+      <rect x="286" y="42" width="118" height="18" rx="8" fill="#553C9A"/>
+      <rect x="286" y="54" width="118" height="6" rx="0" fill="#553C9A"/>
+      <text x="345" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="white">③ 記録DB</text>
+      <text x="345" y="74" text-anchor="middle" font-size="10" fill="#553C9A">支援記録蓄積</text>
+      <text x="345" y="88" text-anchor="middle" font-size="9" fill="#4A5568">音声・AI生成</text>
+      <text x="345" y="102" text-anchor="middle" font-size="9" fill="#4A5568">担当者・日付</text>
+      <text x="345" y="116" text-anchor="middle" font-size="9" fill="#4A5568">計画書作成に活用</text>
+      <!-- シート④ -->
+      <rect x="419" y="42" width="118" height="90" rx="8" fill="#FEFCBF" stroke="#D69E2E" stroke-width="2"/>
+      <rect x="419" y="42" width="118" height="18" rx="8" fill="#D69E2E"/>
+      <rect x="419" y="54" width="118" height="6" rx="0" fill="#D69E2E"/>
+      <text x="478" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="white">④ 国保連集計</text>
+      <text x="478" y="74" text-anchor="middle" font-size="10" fill="#7B341E">②から自動集計</text>
+      <text x="478" y="88" text-anchor="middle" font-size="9" fill="#4A5568">利用日数・単位数</text>
+      <text x="478" y="102" text-anchor="middle" font-size="9" fill="#4A5568">月次ボタンで</text>
+      <text x="478" y="116" text-anchor="middle" font-size="9" fill="#4A5568">一括集計</text>
+      <!-- シート⑤ -->
+      <rect x="552" y="42" width="118" height="90" rx="8" fill="#FFF5F5" stroke="#C53030" stroke-width="2"/>
+      <rect x="552" y="42" width="118" height="18" rx="8" fill="#C53030"/>
+      <rect x="552" y="54" width="118" height="6" rx="0" fill="#C53030"/>
+      <text x="611" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="white">⑤ 計画書管理</text>
+      <text x="611" y="74" text-anchor="middle" font-size="10" fill="#C53030">更新期限管理</text>
+      <text x="611" y="88" text-anchor="middle" font-size="9" fill="#4A5568">前回・次回日付</text>
+      <text x="611" y="102" text-anchor="middle" font-size="9" fill="#4A5568">1か月前メール通知</text>
+      <text x="611" y="116" text-anchor="middle" font-size="9" fill="#4A5568">DriveリンクURL</text>
+      <!-- 下部ラベル -->
+      <text x="350" y="148" text-anchor="middle" font-size="10" fill="#718096">画面下のタブをクリックして切り替えます ／ 5シートはすべて同じファイル（利用者台帳マスター.xlsx）の中にあります</text>
+    </svg>
+    <figcaption>5つのシートが連携して動きます。日常的によく使うのは①利用者マスターと②出退勤記録です</figcaption>
+  </figure>
 
   <!-- Section 1: 台帳の構成 -->
   <div class="section">
@@ -225,6 +295,43 @@
     </div>
   </div>
 
+  <!-- 国保連データフロー SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 130" width="660" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="660" height="130" rx="12" fill="#FFFBEB" stroke="#F6AD55" stroke-width="1.5"/>
+      <text x="330" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#7B341E">月末の国保連データ作成フロー</text>
+      <!-- ②出退勤 -->
+      <rect x="20" y="40" width="130" height="56" rx="8" fill="#276749"/>
+      <text x="85" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="white">②出退勤記録</text>
+      <text x="85" y="76" text-anchor="middle" font-size="10" fill="#9AE6B4">月間の出退勤が</text>
+      <text x="85" y="90" text-anchor="middle" font-size="10" fill="#9AE6B4">すべて記録済み</text>
+      <!-- 矢印 -->
+      <text x="175" y="70" text-anchor="middle" font-size="16" fill="#D69E2E">→</text>
+      <!-- ④集計 -->
+      <rect x="195" y="40" width="140" height="56" rx="8" fill="#D69E2E"/>
+      <text x="265" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="white">④国保連集計ボタン</text>
+      <text x="265" y="76" text-anchor="middle" font-size="10" fill="white">月末処理ボタンを</text>
+      <text x="265" y="90" text-anchor="middle" font-size="10" fill="white">クリック→自動集計</text>
+      <!-- 矢印 -->
+      <text x="360" y="70" text-anchor="middle" font-size="16" fill="#D69E2E">→</text>
+      <!-- 実績記録票 -->
+      <rect x="380" y="40" width="130" height="56" rx="8" fill="#2B6CB0"/>
+      <text x="445" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="white">実績記録票</text>
+      <text x="445" y="76" text-anchor="middle" font-size="10" fill="#BEE3F8">テンプレートを</text>
+      <text x="445" y="90" text-anchor="middle" font-size="10" fill="#BEE3F8">コピーして転記</text>
+      <!-- 矢印 -->
+      <text x="535" y="70" text-anchor="middle" font-size="16" fill="#D69E2E">→</text>
+      <!-- 国保連 -->
+      <rect x="555" y="40" width="90" height="56" rx="8" fill="#1A365D"/>
+      <text x="600" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="white">国保連提出</text>
+      <text x="600" y="78" text-anchor="middle" font-size="9" fill="#BEE3F8">翌月10日</text>
+      <text x="600" y="92" text-anchor="middle" font-size="9" fill="#BEE3F8">までに</text>
+      <!-- 注記 -->
+      <text x="330" y="118" text-anchor="middle" font-size="10" fill="#7B341E">第2段階（4か月目〜）では GAS で PDF 自動生成まで対応予定 ／ 第1段階は手動転記</text>
+    </svg>
+    <figcaption>月末集計はボタン1つで完了します。実績記録票への転記は第1段階では手動で行います</figcaption>
+  </figure>
+
   <!-- Section 3: 国保連テンプレートの使い方 -->
   <div class="section">
     <div class="section-header">
@@ -323,6 +430,15 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ オプション① 台帳編</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>

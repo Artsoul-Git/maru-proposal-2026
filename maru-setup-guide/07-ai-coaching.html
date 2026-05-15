@@ -56,6 +56,27 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
+  /* ── コードブロック コピーボタン ── */
+  .weekly-report { position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.12);
+    color: #A0AEC0; border: 1px solid rgba(255,255,255,0.18); border-radius: 5px;
+    padding: 3px 11px; font-size: 12px; cursor: pointer; font-family: inherit;
+    transition: all 0.2s; }
+  .copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+  .copy-btn.copied { background: #38A169; border-color: #38A169; color: white; }
 </style>
 </head>
 <body>
@@ -78,6 +99,43 @@
       <li>準備5分・セッション1時間で、毎月確実に業務が改善されます</li>
     </ul>
   </div>
+
+  <!-- AIコーチングサイクル図 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 240" width="580" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="580" height="240" rx="12" fill="#F0FFF4"/>
+      <text x="290" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1C4532">AIコーチング — 改善サイクル図</text>
+      <!-- 中央ラベル -->
+      <circle cx="290" cy="128" r="44" fill="#276749"/>
+      <text x="290" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="white">業務改善</text>
+      <text x="290" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white">サイクル</text>
+      <!-- 上：観察 -->
+      <rect x="210" y="40" width="160" height="40" rx="10" fill="#1C4532"/>
+      <text x="290" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="white">① 観察（毎日）</text>
+      <text x="290" y="77" text-anchor="middle" font-size="0" fill="white">x</text>
+      <line x1="290" y1="80" x2="290" y2="84" stroke="#276749" stroke-width="2"/>
+      <polygon points="290,90 284,81 296,81" fill="#276749"/>
+      <!-- 右：レポート -->
+      <rect x="430" y="100" width="140" height="56" rx="10" fill="#2B6CB0"/>
+      <text x="500" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="white">② 週次レポート</text>
+      <text x="500" y="139" text-anchor="middle" font-size="10" fill="#BEE3F8">毎週金曜5分</text>
+      <line x1="430" y1="128" x2="334" y2="128" stroke="#2B6CB0" stroke-width="2"/>
+      <polygon points="336,128 346,122 346,134" fill="#2B6CB0"/>
+      <!-- 下：セッション -->
+      <rect x="210" y="178" width="160" height="40" rx="10" fill="#C05621"/>
+      <text x="290" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="white">③ コーチング</text>
+      <text x="290" y="212" text-anchor="middle" font-size="10" fill="#FEEBC8">月4回（訪問1＋オンライン3）</text>
+      <line x1="290" y1="178" x2="290" y2="172" stroke="#C05621" stroke-width="2"/>
+      <polygon points="290,166 284,176 296,176" fill="#C05621"/>
+      <!-- 左：改善実施 -->
+      <rect x="10" y="100" width="140" height="56" rx="10" fill="#553C9A"/>
+      <text x="80" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="white">④ 改善実施</text>
+      <text x="80" y="137" text-anchor="middle" font-size="10" fill="#D6BCFA">来週のアクション1つ</text>
+      <line x1="150" y1="128" x2="246" y2="128" stroke="#553C9A" stroke-width="2"/>
+      <polygon points="244,128 234,122 234,134" fill="#553C9A"/>
+    </svg>
+    <figcaption>観察 → レポート → コーチング → 改善実施 のサイクルを毎月回すことで、確実に業務が改善されます</figcaption>
+  </figure>
 
   <!-- Section 1: セッションの種類 -->
   <div class="section">
@@ -260,6 +318,39 @@
     </div>
   </div>
 
+  <!-- 自走度ステージ SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 130" width="660" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="660" height="130" rx="12" fill="#F7FAFC"/>
+      <text x="330" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">自走度の成長ステップ（3か月〜6か月）</text>
+      <!-- ステージ1 -->
+      <rect x="20" y="40" width="180" height="68" rx="8" fill="#FEEBC8" stroke="#C05621" stroke-width="2"/>
+      <text x="110" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#C05621">第1段階（1〜3か月）</text>
+      <text x="110" y="78" text-anchor="middle" font-size="10" fill="#4A5568">月4回コーチング</text>
+      <text x="110" y="92" text-anchor="middle" font-size="10" fill="#4A5568">アプリ操作を習得</text>
+      <text x="110" y="106" text-anchor="middle" font-size="9" fill="#C05621">月1件 改善提案が目標</text>
+      <!-- 矢印 -->
+      <polygon points="225,74 208,66 208,82" fill="#276749"/>
+      <line x1="200" y1="74" x2="225" y2="74" stroke="#276749" stroke-width="2"/>
+      <!-- ステージ2 -->
+      <rect x="230" y="40" width="190" height="68" rx="8" fill="#C6F6D5" stroke="#276749" stroke-width="2"/>
+      <text x="325" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">第2段階（4〜6か月）</text>
+      <text x="325" y="78" text-anchor="middle" font-size="10" fill="#4A5568">隔週オンライン（月2回）</text>
+      <text x="325" y="92" text-anchor="middle" font-size="10" fill="#4A5568">改善提案を自走で実施</text>
+      <text x="325" y="106" text-anchor="middle" font-size="9" fill="#276749">KPI数値の改善が実感できる</text>
+      <!-- 矢印 -->
+      <polygon points="447,74 430,66 430,82" fill="#2B6CB0"/>
+      <line x1="420" y1="74" x2="447" y2="74" stroke="#2B6CB0" stroke-width="2"/>
+      <!-- ステージ3 -->
+      <rect x="452" y="40" width="188" height="68" rx="8" fill="#DBEAFE" stroke="#2B6CB0" stroke-width="2"/>
+      <text x="546" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#2B6CB0">自走（6か月〜）</text>
+      <text x="546" y="78" text-anchor="middle" font-size="10" fill="#4A5568">月1回オンライン</text>
+      <text x="546" y="92" text-anchor="middle" font-size="10" fill="#4A5568">ほぼ独力で運用改善</text>
+      <text x="546" y="106" text-anchor="middle" font-size="9" fill="#2B6CB0">「AIが使える組織」として定着</text>
+    </svg>
+    <figcaption>完成度100%を求めません。3か月後に「記録作業が楽になった」という実感が目標です</figcaption>
+  </figure>
+
   <!-- Section 5: KPI管理（自走度評価） -->
   <div class="section">
     <div class="section-header">
@@ -310,6 +401,41 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ オプション③</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// ── コードブロック コピーボタン ──
+document.querySelectorAll('.weekly-report').forEach(function(pre) {
+  var btn = document.createElement('button');
+  btn.className = 'copy-btn';
+  btn.textContent = 'コピー';
+  btn.addEventListener('click', function() {
+    var codeEl = pre.querySelector('code');
+    var text = codeEl ? codeEl.innerText : pre.innerText;
+    text = text.replace(/^コピー\n?|コピー完了！?\n?/g, '').trim();
+    function onSuccess() {
+      btn.textContent = 'コピー完了！'; btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(function() { fallback(text, onSuccess); });
+    } else { fallback(text, onSuccess); }
+  });
+  pre.appendChild(btn);
+});
+function fallback(text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); cb(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+</script>
 </body>
 </html>

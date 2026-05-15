@@ -52,6 +52,19 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
 </style>
 </head>
 <body>
@@ -77,6 +90,31 @@
       <li>Google Sheetsの台帳で出退勤状況・受入れ情報をリアルタイムで確認できる</li>
     </ul>
   </div>
+
+  <!-- ビフォーアフター SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 170" width="680" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="680" height="170" rx="12" fill="#F7FAFC"/>
+      <text x="340" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">アプリ導入 ビフォー → アフター</text>
+      <!-- BEFORE -->
+      <rect x="20" y="38" width="280" height="110" rx="10" fill="#FFF5F5" stroke="#FC8181" stroke-width="2"/>
+      <text x="160" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#C53030">BEFORE（導入前）</text>
+      <text x="46" y="82" font-size="11" fill="#4A5568">📄 受入れ書類を紙で記入</text>
+      <text x="46" y="100" font-size="11" fill="#4A5568">⏰ 出退勤をノートに手書き</text>
+      <text x="46" y="118" font-size="11" fill="#4A5568">💻 ExcelやSheetsへ転記（ミス発生）</text>
+      <text x="46" y="136" font-size="11" fill="#C53030">→ 転記ミス・二重入力・確認に時間</text>
+      <!-- 矢印 -->
+      <text x="340" y="105" text-anchor="middle" font-size="28" fill="#1A56DB">→</text>
+      <!-- AFTER -->
+      <rect x="380" y="38" width="280" height="110" rx="10" fill="#F0FFF4" stroke="#48BB78" stroke-width="2"/>
+      <text x="520" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#22543D">AFTER（導入後）</text>
+      <text x="406" y="82" font-size="11" fill="#4A5568">📱 フォームアプリでスマホ入力</text>
+      <text x="406" y="100" font-size="11" fill="#4A5568">👆 出退勤はワンタップで完了</text>
+      <text x="406" y="118" font-size="11" fill="#4A5568">📊 台帳に自動反映・リアルタイム確認</text>
+      <text x="406" y="136" font-size="11" fill="#22543D">→ 転記ゼロ・ミスなし・時間短縮</text>
+    </svg>
+    <figcaption>2つのアプリ導入で、手入力・転記・二重管理のムダがなくなります</figcaption>
+  </figure>
 
   <!-- アプリ概要 -->
   <div class="section">
@@ -202,6 +240,44 @@
     </div>
   </div>
 
+  <!-- 出退勤打刻フロー SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 130" width="600" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="600" height="130" rx="12" fill="#EBF8FF"/>
+      <text x="300" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1E3A8A">出退勤アプリ（アプリ①）の打刻フロー</text>
+      <!-- スマホ -->
+      <rect x="30" y="40" width="90" height="70" rx="8" fill="#1A56DB"/>
+      <text x="75" y="68" text-anchor="middle" font-size="22" fill="white">📱</text>
+      <text x="75" y="88" text-anchor="middle" font-size="10" fill="#BFDBFE">アプリを開く</text>
+      <!-- 矢印 -->
+      <text x="145" y="78" text-anchor="middle" font-size="22" fill="#1A56DB">→</text>
+      <!-- ボタンタップ -->
+      <rect x="170" y="40" width="120" height="70" rx="8" fill="white" stroke="#1A56DB" stroke-width="2"/>
+      <text x="230" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">「出勤」または</text>
+      <text x="230" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#1E3A8A">「退勤」をタップ</text>
+      <text x="230" y="98" text-anchor="middle" font-size="10" fill="#718096">1回だけ！</text>
+      <!-- 矢印 -->
+      <text x="315" y="78" text-anchor="middle" font-size="22" fill="#1A56DB">→</text>
+      <!-- 確認表示 -->
+      <rect x="340" y="40" width="120" height="70" rx="8" fill="#F0FFF4" stroke="#48BB78" stroke-width="2"/>
+      <text x="400" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#22543D">「記録しました」</text>
+      <text x="400" y="82" text-anchor="middle" font-size="11" fill="#4A5568">と表示されれば</text>
+      <text x="400" y="98" text-anchor="middle" font-size="11" fill="#22543D">完了！</text>
+      <!-- 矢印 -->
+      <text x="485" y="78" text-anchor="middle" font-size="22" fill="#1A56DB">→</text>
+      <!-- Sheets自動反映 -->
+      <rect x="510" y="40" width="70" height="70" rx="8" fill="#DBEAFE" stroke="#1A56DB" stroke-width="1.5"/>
+      <text x="545" y="68" text-anchor="middle" font-size="20">📊</text>
+      <text x="545" y="86" text-anchor="middle" font-size="9" fill="#1E3A8A">台帳に</text>
+      <text x="545" y="98" text-anchor="middle" font-size="9" fill="#1E3A8A">自動反映</text>
+      <!-- 吹き出し -->
+      <rect x="150" y="5" width="140" height="24" rx="5" fill="#FEEBC8" stroke="#F6AD55" stroke-width="1"/>
+      <text x="220" y="20" text-anchor="middle" font-size="10" fill="#7B341E">ここをタップするだけ！</text>
+      <polygon points="230,29 223,23 237,23" fill="#FEEBC8" stroke="#F6AD55" stroke-width="1"/>
+    </svg>
+    <figcaption>出勤・退勤それぞれ1タップで完了。記録は Google Sheets に自動で反映されます</figcaption>
+  </figure>
+
   <!-- Section 3: よくある操作 -->
   <div class="section">
     <div class="section-header">
@@ -253,6 +329,15 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ Phase 1</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>

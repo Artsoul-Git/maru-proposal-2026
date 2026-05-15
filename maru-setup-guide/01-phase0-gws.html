@@ -48,6 +48,27 @@
   .contact-box{background:#EBF8FF;border:2px solid #BEE3F8;border-radius:12px;padding:18px 22px;margin-top:24px;font-size:14px;color:#2C5282}
   .contact-box a{color:#2B6CB0;font-weight:700}
   footer{text-align:center;padding:24px;font-size:12px;color:#A0AEC0}
+  /* ── ページトップへ戻るボタン ── */
+  .to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px;
+    background: #00A8B5; color: white; border: none; border-radius: 50%;
+    font-size: 22px; cursor: pointer; box-shadow: 0 4px 20px rgba(0,168,181,0.35);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.25s, transform 0.25s, background 0.2s;
+    z-index: 1000; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { background: #0891A0; }
+  /* ── SVGイラスト共通 ── */
+  .svg-fig { margin: 22px 0; text-align: center; }
+  .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
+  /* ── コードブロック コピーボタン ── */
+  .prompt-box { position: relative; }
+  .copy-btn { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.12);
+    color: #A0AEC0; border: 1px solid rgba(255,255,255,0.18); border-radius: 5px;
+    padding: 3px 11px; font-size: 12px; cursor: pointer; font-family: inherit;
+    transition: all 0.2s; }
+  .copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+  .copy-btn.copied { background: #38A169; border-color: #38A169; color: white; }
 </style>
 </head>
 <body>
@@ -96,6 +117,41 @@
     </div>
   </div>
 
+  <!-- GWS ツール連携図 SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" width="660" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="660" height="200" rx="12" fill="#F7FAFC"/>
+      <text x="330" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">Google Workspace — 4つのツールが連携する仕組み</text>
+      <!-- 中央：GWSロゴエリア -->
+      <circle cx="330" cy="110" r="34" fill="#553C9A"/>
+      <text x="330" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="white">Google</text>
+      <text x="330" y="120" text-anchor="middle" font-size="10" font-weight="700" fill="white">Workspace</text>
+      <!-- Gmail -->
+      <rect x="30" y="48" width="110" height="46" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+      <text x="85" y="70" text-anchor="middle" font-size="20">📧</text>
+      <text x="85" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Gmail</text>
+      <line x1="140" y1="71" x2="296" y2="100" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Google Meet -->
+      <rect x="30" y="118" width="110" height="46" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+      <text x="85" y="140" text-anchor="middle" font-size="20">🎥</text>
+      <text x="85" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Google Meet</text>
+      <line x1="140" y1="141" x2="296" y2="120" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Drive -->
+      <rect x="520" y="48" width="110" height="46" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+      <text x="575" y="70" text-anchor="middle" font-size="20">📁</text>
+      <text x="575" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Google Drive</text>
+      <line x1="520" y1="71" x2="364" y2="100" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- Gemini -->
+      <rect x="520" y="118" width="110" height="46" rx="8" fill="#C6F6D5" stroke="#276749" stroke-width="1.5"/>
+      <text x="575" y="140" text-anchor="middle" font-size="20">🤖</text>
+      <text x="575" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Gemini AI</text>
+      <line x1="520" y1="141" x2="364" y2="120" stroke="#48BB78" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <!-- ラベル -->
+      <text x="330" y="184" text-anchor="middle" font-size="10" fill="#718096">すべて同じアカウント（@marufukushi.jp）でログインして連携します</text>
+    </svg>
+    <figcaption>Gmail・Meet・Drive・Gemini の4ツールが1つのアカウントで連携。面談→録音→AI記録→保存まで一気通貫です</figcaption>
+  </figure>
+
   <!-- Section 2: 初期設定 -->
   <div class="section">
     <div class="section-header">
@@ -108,7 +164,7 @@
       <div class="step-body">
         <h3>パソコンでChromeブラウザを開く</h3>
         <p>Google Chromeというブラウザ（インターネット閲覧ソフト）を使います。まだインストールされていない場合は上村に連絡してください。</p>
-        <div class="note">InternetExplorerやEdgeでも動きますが、ChromeかSafariを推奨します。</div>
+        <div class="note">EdgeやSafariでも動きますが、ChromeかSafariを推奨します（Internet Explorerは2022年にサポート終了しており使用不可です）。</div>
       </div>
     </div>
 
@@ -184,6 +240,45 @@
       </div>
     </div>
   </div>
+
+  <!-- Mode A フロー SVG -->
+  <figure class="svg-fig">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 130" width="720" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+      <rect width="720" height="130" rx="12" fill="#1A202C"/>
+      <text x="360" y="24" text-anchor="middle" font-size="12" font-weight="700" fill="#A0AEC0" letter-spacing="2">PHASE 0 — MODE A 作業フロー</text>
+      <!-- ステップ1 -->
+      <rect x="20" y="40" width="115" height="60" rx="8" fill="#553C9A"/>
+      <text x="77" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="white">① 面談実施</text>
+      <text x="77" y="82" text-anchor="middle" font-size="10" fill="#D6BCFA">Meet で録音</text>
+      <!-- 矢印 -->
+      <text x="152" y="73" text-anchor="middle" font-size="18" fill="#4A5568">→</text>
+      <!-- ステップ2 -->
+      <rect x="168" y="40" width="115" height="60" rx="8" fill="#2D3748"/>
+      <text x="225" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#90CDF4">② 字幕取得</text>
+      <text x="225" y="82" text-anchor="middle" font-size="10" fill="#718096">Drive に自動保存</text>
+      <!-- 矢印 -->
+      <text x="300" y="73" text-anchor="middle" font-size="18" fill="#4A5568">→</text>
+      <!-- ステップ3 -->
+      <rect x="316" y="40" width="115" height="60" rx="8" fill="#2D3748"/>
+      <text x="373" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#90CDF4">③ Gemini貼付</text>
+      <text x="373" y="82" text-anchor="middle" font-size="10" fill="#718096">プロンプトを使用</text>
+      <!-- 矢印 -->
+      <text x="448" y="73" text-anchor="middle" font-size="18" fill="#4A5568">→</text>
+      <!-- ステップ4 -->
+      <rect x="464" y="40" width="115" height="60" rx="8" fill="#276749"/>
+      <text x="521" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="white">④ 記録完成</text>
+      <text x="521" y="82" text-anchor="middle" font-size="10" fill="#9AE6B4">確認・修正</text>
+      <!-- 矢印 -->
+      <text x="596" y="73" text-anchor="middle" font-size="18" fill="#4A5568">→</text>
+      <!-- ステップ5 -->
+      <rect x="612" y="40" width="88" height="60" rx="8" fill="#007B87"/>
+      <text x="656" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="white">⑤ 保存</text>
+      <text x="656" y="82" text-anchor="middle" font-size="10" fill="#B2F5EA">Drive/Sheets</text>
+      <!-- 時間短縮ラベル -->
+      <text x="360" y="118" text-anchor="middle" font-size="10" fill="#68D391">⏱ 記録作業：60分 → 10〜15分に短縮</text>
+    </svg>
+    <figcaption>Mode A（手動コピペ）でも記録作業時間を大幅に短縮できます。Phase 3 で完全自動化になります</figcaption>
+  </figure>
 
   <!-- Section 4: Geminiで記録生成（Mode A） -->
   <div class="section">
@@ -316,6 +411,41 @@
 
 <footer>© 2026 有限会社アートソウル ／ 合同会社まる 専用ガイド ／ Phase 0</footer>
 
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="ページの先頭へ" style="position:fixed;bottom:24px;right:24px;background:#1A365D;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.28);z-index:1000;line-height:1;display:flex;align-items:center;justify-content:center;">↑</button>
+<button class="to-top" id="toTop" title="ページトップへ戻る" aria-label="ページトップへ戻る">↑</button>
+<script>
+var toTop = document.getElementById('toTop');
+window.addEventListener('scroll', function() {
+  toTop.classList.toggle('visible', window.scrollY > 300);
+});
+toTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// ── コードブロック コピーボタン ──
+document.querySelectorAll('.prompt-box').forEach(function(pre) {
+  var btn = document.createElement('button');
+  btn.className = 'copy-btn';
+  btn.textContent = 'コピー';
+  btn.addEventListener('click', function() {
+    var codeEl = pre.querySelector('code');
+    var text = codeEl ? codeEl.innerText : pre.innerText;
+    text = text.replace(/^コピー\n?|コピー完了！?\n?/g, '').trim();
+    function onSuccess() {
+      btn.textContent = 'コピー完了！'; btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(function() { fallback(text, onSuccess); });
+    } else { fallback(text, onSuccess); }
+  });
+  pre.appendChild(btn);
+});
+function fallback(text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); cb(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+</script>
 </body>
 </html>
