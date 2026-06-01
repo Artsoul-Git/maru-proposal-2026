@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【別紙】2026年6月 福祉B型業界の動きと加算試算｜合同会社まる様</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --primary: #112A46;
+  --secondary: #00A8B5;
+  --accent: #E53E3E;
+  --bg-light: #F4F7F9;
+  --bg-white: #FFFFFF;
+  --text-main: #2D3748;
+  --text-muted: #718096;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { zoom: 1.2; scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', "Yu Gothic UI", "Hiragino Sans", sans-serif;
+  line-height: 1.8;
+  color: var(--text-main);
+  background: var(--bg-light);
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: var(--primary);
+  color: var(--bg-white);
+  position: relative;
+}
+.cover .label {
+  font-size: 12px;
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.cover h1 {
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.cover .sub {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.85;
+}
+.cover .ref-badge {
+  display: inline-block;
+  background: rgba(0,168,181,0.85);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 22px;
+  letter-spacing: 1px;
+}
+
+.content-wrapper {
+  padding: 50px 60px 60px;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--primary);
+  margin: 40px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-light);
+  display: flex;
+  align-items: center;
+}
+h2 .sec-num {
+  background: var(--secondary);
+  color: white;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+h3 {
+  font-size: 17px;
+  color: var(--primary);
+  margin: 22px 0 12px;
+  padding-left: 14px;
+  border-left: 5px solid var(--secondary);
+}
+
+.lead, .tip, .ok, .warn, .info {
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.lead { background: #EBF8FF; border-left: 5px solid #2B6CB0; }
+.tip { background: #FFFAF0; border-left: 5px solid #ED8936; }
+.ok { background: #F0FFF4; border-left: 5px solid #38A169; }
+.warn { background: #FFF5F5; border-left: 5px solid #C53030; }
+.info { background: #EBF8FF; border-left: 5px solid #3182CE; }
+.lead .label, .tip .label, .ok .label, .warn .label, .info .label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.lead .label { background: #2B6CB0; color: white; }
+.tip .label { background: #ED8936; color: white; }
+.ok .label { background: #38A169; color: white; }
+.warn .label { background: #C53030; color: white; }
+.info .label { background: #3182CE; color: white; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-size: 13px;
+}
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #E2E8F0;
+}
+th {
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+tr:nth-child(even) td { background: var(--bg-light); }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+.stat-card {
+  background: #FFF5F5;
+  border-radius: 10px;
+  padding: 18px 14px;
+  border-left: 5px solid #E53E3E;
+  text-align: center;
+}
+.stat-card .num {
+  font-size: 32px;
+  font-weight: 900;
+  color: #C53030;
+  font-family: 'Montserrat', sans-serif;
+}
+.stat-card .lab {
+  font-size: 11px;
+  color: #C53030;
+  font-weight: 700;
+  margin: 4px 0 6px;
+}
+.stat-card .src {
+  font-size: 10px;
+  color: #718096;
+}
+
+.topic-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.topic-card.t1 { border-left: 6px solid #E53E3E; }
+.topic-card.t2 { border-left: 6px solid #2B6CB0; }
+.topic-card.t3 { border-left: 6px solid #276749; }
+.topic-card .meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.topic-card .tag {
+  color: white;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.topic-card.t1 .tag { background: #E53E3E; }
+.topic-card.t2 .tag { background: #2B6CB0; }
+.topic-card.t3 .tag { background: #276749; }
+.topic-card .src {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.topic-card .title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+.topic-card .body {
+  font-size: 13px;
+  color: #4A5568;
+  line-height: 1.85;
+}
+
+.footer-area {
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--text-muted);
+  font-size: 12px;
+  border-top: 1px solid #E2E8F0;
+}
+
+@media (max-width: 768px) {
+  body { padding: 20px 10px; }
+  .content-wrapper { padding: 32px 24px; }
+  .cover { padding: 50px 24px; }
+  .cover h1 { font-size: 22px; }
+}
+
+@media print {
+  body { padding: 0; background: white; }
+  .container { box-shadow: none; }
+  .cover { background: white; color: black; }
+  .cover .label { color: #2B6CB0; }
+  th { background: #112A46 !important; -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="cover">
+  <div class="label">SUPPLEMENTARY DOCUMENT</div>
+  <h1>【別紙】2026年6月<br>福祉B型業界の動きと加算試算</h1>
+  <div class="sub">本提案書「AI導入支援 完全提案パッケージ v11.0」の補足資料<br>業界動向・処遇改善加算・補助金活用に関する情報をまとめています</div>
+  <div class="ref-badge">合同会社まる様向け補足資料</div>
+</div>
+
+<div class="content-wrapper">
+
+<div class="info">
+  <span class="label">本書の位置づけ</span>
+  本書は、合同会社まる様向け提案書本体の<strong>補足資料</strong>です。提案の中心は本体提案書（v11.0）に記載しており、本書では「2026年6月時点の業界動向」「処遇改善加算の活用試算」「ICT補助金活用シナリオ」など、ご興味に応じて参照いただける情報を整理しています。
+</div>
+
+<!-- ============= Section 1 ============= -->
+<h2><span class="sec-num">1</span>2026年5〜6月に起きた3つのこと</h2>
+
+<div class="topic-card t1">
+  <div class="meta">
+    <span class="tag">2026/6/1 施行</span>
+    <span class="src">厚生労働省 令和8年度報酬改定（期中改定）</span>
+  </div>
+  <div class="title">処遇改善加算に「生産性向上区分（I(ロ)・II(ロ)）」が新設</div>
+  <div class="body">事務・調理・運転手・管理者・相談支援専門員まで対象が拡大。<strong>AIによる業務効率化が、加算取得の直接根拠になる時代</strong>に入りました。「生産性向上＋処遇還元」のセットで認定される設計です。</div>
+</div>
+
+<div class="topic-card t2">
+  <div class="meta">
+    <span class="tag">2026/5/7 発表</span>
+    <span class="src">OpenAI / Anthropic</span>
+  </div>
+  <div class="title">音声→文章AIの「価格破壊」が完了</div>
+  <div class="body">OpenAI Realtime API（音声起こし）が <strong>1分あたり約2.5円</strong>に。Claude Opus 4.7・Sonnet 4.6・Haiku 4.5 の3段階使い分けでさらに最適化。<strong>「面談30分 = AI処理1.2円」</strong>の世界が現実になりました。本提案でも段階的に活用予定です。</div>
+</div>
+
+<div class="topic-card t3">
+  <div class="meta">
+    <span class="tag">公募中</span>
+    <span class="src">令和8年度 介護テクノロジー導入支援事業</span>
+  </div>
+  <div class="title">ICT導入費の「補助率 3/4」公的補助が継続</div>
+  <div class="body">最大100万円／施設の補助。<strong>実質負担を1/4に圧縮できる年</strong>です。AIケアプラン原案作成支援ソフトも対象経費に含まれます。申請書類作成・自治体相談はAS伴走の標準サポート範囲に含まれます。</div>
+</div>
+
+<div class="tip" style="margin-top:18px;">
+  <span class="label">所感</span>
+  <strong>2026年6月〜2027年3月は「制度／技術／補助金が同時に揃った異例の窓」</strong>です。3つすべてを同時に活用できる年は近年なかったため、AS としても積極的に情報提供しています。
+</div>
+
+<!-- ============= Section 2 ============= -->
+<h2><span class="sec-num">2</span>業界統計 — 「やらないリスク」の定量根拠</h2>
+
+<div class="warn">
+  <span class="label">公的統計・一次ソース</span>
+  福祉事業者全体の経営環境は、近年急速に厳しさを増しています。以下は本書執筆時点（2026年6月）の公的統計・主要メディア報道に基づく数字です。
+</div>
+
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="num">478<span style="font-size:14px;">件</span></div>
+    <div class="lab">2025年度 医療・福祉事業 倒産</div>
+    <div class="src">38年で過去最多／3年連続更新<br>（東京商工リサーチ）</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">212<span style="font-size:14px;">件</span></div>
+    <div class="lab">2024年 障害福祉事業所 閉鎖</div>
+    <div class="src">過去最多更新<br>（日本経済新聞）</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">37.2<span style="font-size:14px;">%</span></div>
+    <div class="lab">障害者支援事業者 赤字割合</div>
+    <div class="src">3社に1社は赤字<br>（帝国データバンク 2022年度）</div>
+  </div>
+</div>
+
+<div class="info" style="margin-top:18px;">
+  <span class="label">本書での扱い</span>
+  これらの統計は<strong>合同会社まる様の現状を悲観させるためのものではありません</strong>。「業界全体が淘汰フェーズにあるなかで、まる様が選ばれ続けるための投資は何か」を考える際の参考情報としてご活用ください。AI導入は、その選択肢のひとつです。
+</div>
+
+<!-- ============= Section 3 ============= -->
+<h2><span class="sec-num">3</span>処遇改善加算「生産性向上区分」シミュレーション</h2>
+
+<div class="warn">
+  <span class="label">2026年度 報酬改定（期中改定）— 出典：厚生労働省</span>
+  <strong>2026年6月1日から、福祉・障害分野の処遇改善加算が4区分から拡充され、「生産性向上・協働化に取り組む事業者」に上乗せする<span style="color:#C05621;">I(ロ)・II(ロ)区分</span>が新設されました。</strong>事務・調理・運転手・管理者・相談支援専門員も対象に拡大しています。
+</div>
+
+<h3>なぜ AI導入が加算根拠になるのか</h3>
+
+<div class="info">
+  <span class="label">制度設計の意図</span>
+  生産性向上区分は「ICT・AI・タスクシェアリング等で業務効率化を行い、その分を職員処遇に還元する事業者を支援する」設計です。<strong>本提案のAI導入は「制度が求める生産性向上の取り組み」に直接対応</strong>します。
+</div>
+
+<h3>合同会社まる様 — 加算試算（保守シナリオ）</h3>
+
+<table>
+  <tr><th>項目</th><th>内容</th><th>影響額（年額・概算）</th></tr>
+  <tr>
+    <td><strong>① 生産性向上区分 取得</strong></td>
+    <td>AI記録自動生成・出退勤デジタル化等の取り組みを所定様式で報告。「業務効率化＋処遇還元」のセットで認定。</td>
+    <td style="color:#276749;font-weight:bold;">+30万〜80万円<br><span style="font-size:11px;font-weight:normal;color:#718096;">職員数・実績により変動</span></td>
+  </tr>
+  <tr>
+    <td><strong>② 処遇改善対象拡大</strong></td>
+    <td>事務・調理・運転手・管理者・相談支援専門員まで処遇改善の対象に。AIで効率化された分を職員給与に反映可能。</td>
+    <td style="color:#276749;font-weight:bold;">+10万〜30万円</td>
+  </tr>
+  <tr>
+    <td><strong>③ ICT補助金活用</strong></td>
+    <td>令和8年度 介護テクノロジー導入支援事業（補助率 3/4・上限100万円）。AIケアプラン原案作成支援ソフトも対象。</td>
+    <td style="color:#276749;font-weight:bold;">最大 75万円<br><span style="font-size:11px;font-weight:normal;color:#718096;">単年度・申請ベース</span></td>
+  </tr>
+  <tr style="background:#F0FFF4;font-weight:bold;">
+    <td colspan="2"><strong>合計（初年度）— 加算 + 補助金の最大効果</strong></td>
+    <td style="color:#276749;font-size:17px;">+40万〜185万円<br><span style="font-size:10px;font-weight:normal;color:#718096;">下限：加算①下限+②下限のみ取得時／上限：①②上限+ICT補助金75万円取得時</span></td>
+  </tr>
+</table>
+
+<div class="tip" style="margin-top:18px;">
+  <span class="label">注意</span>
+  上記は <strong>「AI導入で実際に業務効率化が起き、その内容を所定様式で記録・申請できた場合」</strong> の試算です。フェーズ1〜2の中で、加算申請のための業務記録テンプレートも併せて整備します（追加費用なし）。<br>
+  ICT補助金は単年度公募・先着または枠制のため、必ず取得できる保証はありません。本書では「ICT補助金が取得できた場合」を上限として明示しています。
+</div>
+
+<!-- ============= Section 4 ============= -->
+<h2><span class="sec-num">4</span>一次ソース・出典一覧</h2>
+
+<div class="ok">
+  <span class="label">透明性確保</span>
+  本書のすべての主張は、以下の公的統計・主要メディア・公的機関の発表に基づいています。
+</div>
+
+<table>
+  <tr><th style="width:30%;">出典</th><th>内容</th></tr>
+  <tr><td>東京商工リサーチ</td><td>「2025年度 医療・福祉事業倒産 過去最多」</td></tr>
+  <tr><td>日本経済新聞</td><td>「障害者福祉事業所の閉鎖、24年212件で最多」</td></tr>
+  <tr><td>帝国データバンク</td><td>「障害者施設、倒産・廃業が急増 22年度4割赤字」</td></tr>
+  <tr><td>厚生労働省</td><td>「令和8年度障害福祉サービス報酬改定（期中改定）」</td></tr>
+  <tr><td>厚生労働省</td><td>「介護テクノロジー導入支援事業」補助率 3/4・上限100万円</td></tr>
+  <tr><td>OpenAI</td><td>「Realtime API 新世代モデル発表（2026/5/7）」</td></tr>
+  <tr><td>Anthropic</td><td>「Claude Opus 4.7・Sonnet 4.6・Haiku 4.5 提供開始」</td></tr>
+</table>
+
+<!-- ============= Section 5 ============= -->
+<h2><span class="sec-num">5</span>本書を踏まえた次のステップ</h2>
+
+<div class="lead">
+  <span class="label">本書の活用方法</span>
+  本書は、提案書本体の判断材料として「補足情報」を整理したものです。以下のいずれかでご活用ください。
+</div>
+
+<table>
+  <tr><th style="width:30%;">活用シーン</th><th>本書の使い方</th></tr>
+  <tr>
+    <td><strong>業界動向を把握したい</strong></td>
+    <td>Section 1（2026年5〜6月の3トピック）＋ Section 2（業界統計）をお読みください。</td>
+  </tr>
+  <tr>
+    <td><strong>加算・補助金の活用可能性を見たい</strong></td>
+    <td>Section 3（処遇改善加算シミュレーション）をご確認ください。本提案を実行した場合の試算が含まれます。</td>
+  </tr>
+  <tr>
+    <td><strong>本提案を進めるか判断する</strong></td>
+    <td>提案書本体（v11.0）のご決断シートをご参照ください。本書はその判断を補強する位置づけです。</td>
+  </tr>
+  <tr>
+    <td><strong>個別にご相談したい</strong></td>
+    <td>下記の連絡先まで、メール・電話のいずれでもお気軽にご連絡ください。</td>
+  </tr>
+</table>
+
+<div class="info" style="margin-top:24px;">
+  <span class="label">お問い合わせ</span>
+  <strong>有限会社アートソウル</strong>　上村桂右<br>
+  📧 uemura@artsoul.jp ／ 📞 090-1909-3953（平日11:00〜18:00）<br>
+  本書および提案書本体に関するご質問・ご相談は、いつでもお気軽にお寄せください。
+</div>
+
+<div class="footer-area">
+  <p><strong>有限会社アートソウル</strong>　上村桂右 ／ uemura@artsoul.jp</p>
+  <p style="margin-top:8px;">本書は合同会社まる様専用の補足資料です。無断転載・転用はお断りします。</p>
+  <p style="margin-top:4px; color:#A0AEC0;">【別紙】Document Version 1.0 ／ 2026年6月1日</p>
+</div>
+
+</div><!-- /.content-wrapper -->
+</div><!-- /.container -->
+</body>
+</html>
