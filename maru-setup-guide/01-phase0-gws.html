@@ -69,12 +69,32 @@
     transition: all 0.2s; }
   .copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
   .copy-btn.copied { background: #38A169; border-color: #38A169; color: white; }
+
+  /* 提案書本体への戻りボタン（基本ルール） */
+  .btn-back-proposal { display:inline-block; background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 100%); color:white !important; text-decoration:none; padding:7px 16px; border-radius:18px; font-size:12px; font-weight:700; box-shadow:0 2px 8px rgba(26,54,93,0.3); margin-right:10px; transition:all 0.2s; }
+  .btn-back-proposal:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(26,54,93,0.5); }
+
+  /* ── カレンダー中心運用：3ロールカード ── */
+  .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+  @media(max-width:680px){.role-grid{grid-template-columns:1fr}}
+  .role-card{background:#F7FAFC;border:2px solid #E2E8F0;border-radius:10px;padding:14px 16px;position:relative}
+  .role-card .role-badge{position:absolute;top:-10px;left:14px;background:#553C9A;color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:1px}
+  .role-card h4{font-size:14px;font-weight:700;color:#2D3748;margin:6px 0 6px}
+  .role-card p{font-size:13px;color:#4A5568;line-height:1.6}
+  .role-card .who{display:inline-block;background:#EDE9FE;color:#553C9A;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;margin-bottom:4px}
+  /* 効果バッジ */
+  .benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+  @media(max-width:580px){.benefit-grid{grid-template-columns:1fr}}
+  .benefit-card{background:#F0FFF4;border-left:4px solid #48BB78;border-radius:6px;padding:12px 14px}
+  .benefit-card .b-label{font-size:11px;font-weight:700;color:#276749;letter-spacing:1px;margin-bottom:4px}
+  .benefit-card .b-title{font-size:14px;font-weight:700;color:#22543D;margin-bottom:4px}
+  .benefit-card .b-desc{font-size:13px;color:#2D3748;line-height:1.55}
 </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div class="breadcrumb"><a href="../index.html">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
+  <div class="breadcrumb"><a href="../index.html" class="btn-back-proposal">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
   <div class="phase-label">Phase 0 ／ Week 1〜2</div>
   <h1>GWSセットアップ ＋ 即効録音体制の構築</h1>
   <div class="timing">アプリ開発なし ／ 設定だけ ／ 第1週目から効果が出ます</div>
@@ -112,7 +132,7 @@
           <li><strong>Google Sheets</strong> — Excelのようなスプレッドシート</li>
           <li><strong>Google Gemini</strong> — AIアシスタント（記録生成に使います）</li>
         </ul>
-        <div class="tip">GWSは既にご契約いただいています。上村より各アカウント情報をお渡しします。</div>
+        <div class="tip">GWSは既にご契約いただいています。弊社より各アカウント情報をお渡しします。</div>
       </div>
     </div>
   </div>
@@ -163,7 +183,7 @@
       <div class="step-num">1</div>
       <div class="step-body">
         <h3>パソコンでChromeブラウザを開く</h3>
-        <p>Google Chromeというブラウザ（インターネット閲覧ソフト）を使います。まだインストールされていない場合は上村に連絡してください。</p>
+        <p>Google Chromeというブラウザ（インターネット閲覧ソフト）を使います。まだインストールされていない場合は弊社サポートに連絡してください。</p>
         <div class="note">EdgeやSafariでも動きますが、ChromeかSafariを推奨します（Internet Explorerは2022年にサポート終了しており使用不可です）。</div>
       </div>
     </div>
@@ -172,71 +192,203 @@
       <div class="step-num">2</div>
       <div class="step-body">
         <h3>Googleアカウントにログインする</h3>
-        <p>ブラウザの右上にある人型のアイコンをクリックして、<strong>上村からお渡ししたメールアドレスとパスワード</strong>でログインしてください。</p>
+        <p>ブラウザの右上にある人型のアイコンをクリックして、<strong>弊社からお渡ししたメールアドレスとパスワード</strong>でログインしてください。</p>
         <div class="note">パスワードは必ず変更してください。変更方法：画面右上のアカウントアイコン → 「Googleアカウントを管理」 → 「セキュリティ」 → 「パスワード」</div>
       </div>
     </div>
-
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>Driveを開いて「まるフォルダ」を確認する</h3>
-        <p>ブラウザで <code>drive.google.com</code> を開き、上村が準備したフォルダが共有されているか確認してください。以下のフォルダが見えていればOKです。</p>
-        <ul>
-          <li>📁 面談記録（GeminiAI生成）</li>
-          <li>📁 利用者台帳</li>
-        </ul>
-        <div class="ok">フォルダが見えたら初期設定は完了です！</div>
-      </div>
-    </div>
   </div>
-
-  <!-- Section 3: Google Meetで面談を録音 -->
+  <!-- Section 3: カレンダー中心運用でMeet録音 -->
   <div class="section">
     <div class="section-header">
       <div class="section-num">3</div>
-      <h2>Google Meetで面談を録音する（字幕機能）</h2>
+      <h2>Googleカレンダーを中心に Meet で面談を録音する</h2>
     </div>
 
+    <!-- 核心メッセージ -->
+    <div class="mode-a-box">
+      <div class="label">運用の核心</div>
+      <h3>Meet を単独で覚えない。Google カレンダーが司令塔。</h3>
+      <p style="font-size:14px;color:#4A5568;">
+        カレンダーに「面談」「会議」を Meet 付きで登録しておけば、当日は <strong>参加者がスマホでカレンダーを開いて予定をタップするだけ</strong> で Meet に入れます。録音・字幕データはすべて登録者（管理者）のアカウントに集約されるため、データの所在で迷いません。
+      </p>
+      <div class="flow" style="margin-top:14px">
+        <div class="fl-item">カレンダー登録</div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-item">参加者に共有</div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-item">当日タップで Meet 入室</div>
+        <div class="fl-arrow">→</div>
+        <div class="fl-item">録音データは管理者に集約</div>
+      </div>
+    </div>
+
+    <!-- 3ロール図解 -->
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h3>Meetで会議を開始する</h3>
-        <p>ブラウザで <code>meet.google.com</code> を開き、「新しい会議」→「今すぐ開始」をクリックします。</p>
-        <div class="tip">面談相手が別の場所にいる場合はリンクを送って招待します。対面の場合はタブレット・パソコンをテーブルに置いて録音専用として使います。</div>
+        <h3>運用は「3つの役割」で回す</h3>
+        <p>登録する人を絞り、現場は「予定タップだけ」。これで教育コストと操作トラブルを同時に下げられます。</p>
+
+        <div class="role-grid">
+          <div class="role-card">
+            <span class="role-badge">① 登録</span>
+            <span class="who">管理者 1〜2名</span>
+            <h4>カレンダーに Meet 付きで登録</h4>
+            <p>面談・会議をすべて「管理者アカウント」のカレンダーに登録。<strong>Google Meet のリンクは登録時に自動付与</strong>。</p>
+          </div>
+          <div class="role-card">
+            <span class="role-badge">② 共有</span>
+            <span class="who">管理者 → 参加者</span>
+            <h4>カレンダーを参加者に共有</h4>
+            <p>関係スタッフ・関係者を「ゲスト」として招待。参加者のカレンダーにも自動で予定が並びます。</p>
+          </div>
+          <div class="role-card">
+            <span class="role-badge">③ 実行</span>
+            <span class="who">参加者全員</span>
+            <h4>当日はスマホで予定をタップ</h4>
+            <p>Google カレンダーを開く → 該当予定をタップ → 「Meet に参加」をタップ。<strong>覚える操作はこれだけ</strong>。</p>
+          </div>
+        </div>
+
+        <div class="ok">
+          現場スタッフが覚えるのは「カレンダーを開く」「予定をタップ」の2動作だけ。新人にも30秒で説明が終わります。
+        </div>
       </div>
     </div>
 
+    <!-- ステップ詳細：管理者の登録手順 -->
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h3>字幕（文字起こし）をオンにする</h3>
-        <p>会議画面の下部にある「…（その他のオプション）」をクリック → 「字幕をオンにする」を選択します。</p>
-        <p>すると、話した言葉が画面の下部にテキストで表示されます。</p>
-        <div class="note">字幕は自動生成のため、固有名詞や専門用語は誤変換される場合があります。あとでGeminiのプロンプトで補正できます。</div>
+        <h3>【管理者の作業】予定を Meet 付きで登録する</h3>
+        <ol>
+          <li><code>calendar.google.com</code> を開く（管理者アカウントでログイン）</li>
+          <li>登録したい日時をクリック → タイトル（例：「○○さん 個別面談」）を入力</li>
+          <li><strong>「Google Meet のビデオ会議を追加」</strong>ボタンをクリック（自動でリンクが発行されます）</li>
+          <li>「ゲストを追加」に参加者のメールアドレスを入力</li>
+          <li>「保存」をクリック → 参加者に招待メールが届きます</li>
+        </ol>
+        <div class="tip">
+          <strong>登録権限は管理者 1〜2名に限定</strong>します。これにより「予定の作り方を全員に教える必要がなくなり」「登録ミス・重複・操作トラブルが激減」します。
+        </div>
+        <div class="note">
+          字幕（自動文字起こし）を毎回オンにする運用にしておけば、終了後に Drive へトランスクリプトが自動保存されます。
+        </div>
       </div>
     </div>
 
+    <!-- ステップ詳細：現場の当日操作 -->
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <h3>字幕のトランスクリプト（全文テキスト）を保存する</h3>
-        <p>会議終了後、Googleがトランスクリプト（話した内容の全文テキスト）を自動的にDriveへ保存します。場所：Drive → 「マイドライブ」 → 「Meet の録音と文字起こし」</p>
-        <div class="ok">面談が終わったら、このトランスクリプトファイルを開いてテキストをすべてコピーします（Ctrl+A → Ctrl+C）。</div>
+        <h3>【参加者の作業】当日はスマホでカレンダーを開くだけ</h3>
+        <ol>
+          <li>スマホで <strong>Google カレンダーアプリ</strong>を開く（事前にインストール）</li>
+          <li>当日の予定をタップ</li>
+          <li>「Google Meet に参加」をタップ → そのままビデオ会議に入室</li>
+          <li>会議中は通常通り会話。録音・字幕は管理者側の設定で自動稼働</li>
+          <li>終了時は「通話を終了」をタップして退出するだけ</li>
+        </ol>
+        <div class="ok">
+          開始・停止・保存の操作は <strong>すべて自動</strong>。参加者は「タップして話して切る」だけで、データが残ります。
+        </div>
       </div>
     </div>
 
+    <!-- データ集約構成図 -->
+    <figure class="svg-fig">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="720" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
+        <rect width="720" height="240" rx="12" fill="#FAF5FF"/>
+        <text x="360" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#553C9A">データ集約構成図 — すべて「管理者アカウント」に集まる</text>
+
+        <!-- 中央：管理者アカウント -->
+        <rect x="280" y="98" width="160" height="74" rx="10" fill="#553C9A"/>
+        <text x="360" y="124" text-anchor="middle" font-size="22" fill="white">👤</text>
+        <text x="360" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="white">管理者アカウント</text>
+        <text x="360" y="162" text-anchor="middle" font-size="10" fill="#D6BCFA">（1つに集約）</text>
+
+        <!-- 左：カレンダー -->
+        <rect x="40" y="58" width="140" height="58" rx="8" fill="white" stroke="#553C9A" stroke-width="2"/>
+        <text x="110" y="80" text-anchor="middle" font-size="18">📅</text>
+        <text x="110" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Google カレンダー</text>
+        <text x="110" y="112" text-anchor="middle" font-size="9" fill="#718096">予定 + Meet リンク</text>
+        <line x1="180" y1="92" x2="278" y2="118" stroke="#553C9A" stroke-width="1.8" marker-end="url(#arrMeetA)"/>
+
+        <!-- 上：Meet 録音 -->
+        <rect x="290" y="36" width="140" height="46" rx="8" fill="white" stroke="#553C9A" stroke-width="2"/>
+        <text x="360" y="56" text-anchor="middle" font-size="16">🎥</text>
+        <text x="360" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Meet 録音・字幕</text>
+        <line x1="360" y1="82" x2="360" y2="96" stroke="#553C9A" stroke-width="1.8" marker-end="url(#arrMeetA)"/>
+
+        <!-- 右：Drive -->
+        <rect x="540" y="58" width="140" height="58" rx="8" fill="white" stroke="#553C9A" stroke-width="2"/>
+        <text x="610" y="80" text-anchor="middle" font-size="18">📂</text>
+        <text x="610" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">Drive に自動保存</text>
+        <text x="610" y="112" text-anchor="middle" font-size="9" fill="#718096">録音・トランスクリプト</text>
+        <line x1="442" y1="118" x2="540" y2="92" stroke="#553C9A" stroke-width="1.8" marker-end="url(#arrMeetA)"/>
+
+        <!-- 下：参加者スマホ群 -->
+        <rect x="120" y="190" width="100" height="36" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+        <text x="170" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">📱 参加者A</text>
+        <rect x="310" y="190" width="100" height="36" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+        <text x="360" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">📱 参加者B</text>
+        <rect x="500" y="190" width="100" height="36" rx="8" fill="#EDE9FE" stroke="#553C9A" stroke-width="1.5"/>
+        <text x="550" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#553C9A">📱 参加者C</text>
+
+        <!-- 共有破線 -->
+        <line x1="170" y1="190" x2="320" y2="172" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="360" y1="190" x2="360" y2="172" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="550" y1="190" x2="400" y2="172" stroke="#B794F4" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="360" y="186" text-anchor="middle" font-size="9" fill="#553C9A" font-style="italic">カレンダー共有で予定をタップして参加</text>
+
+        <defs>
+          <marker id="arrMeetA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#553C9A"/>
+          </marker>
+        </defs>
+      </svg>
+      <figcaption>登録・録音・保存のすべてが管理者アカウントに集約。データの所在で迷うことがありません</figcaption>
+    </figure>
+
+    <!-- 仕組みの効果 -->
     <div class="step">
       <div class="step-num">4</div>
       <div class="step-body">
-        <h3>【対面面談の場合】スマホ録音 → 字幕代わりの方法</h3>
-        <p>相手と同じ部屋で話す対面面談では、以下の方法を使います：</p>
-        <ol>
-          <li>スマホ（Android or iPhone）でGoogle Meetを開く</li>
-          <li>自分だけで会議を作成し、スマホのマイクに向かって話す</li>
-          <li>字幕が表示され、終了後にトランスクリプトが保存される</li>
-        </ol>
-        <div class="tip">または、スマホのメモアプリ（iPhoneの「メモ」等）の音声入力機能で話してテキスト化する方法でも構いません。</div>
+        <h3>この仕組みで得られる4つの効果</h3>
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="b-label">教育コスト削減</div>
+            <div class="b-title">覚える人は管理者 1〜2名だけ</div>
+            <div class="b-desc">予定登録方法を全員に教えなくてよい。現場は「タップして話す」だけ。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-label">運用トラブル回避</div>
+            <div class="b-title">操作の単純化でミスが減る</div>
+            <div class="b-desc">登録権限を絞ることで予定の重複・記入漏れ・リンク発行ミスが起きません。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-label">直感的な予定管理</div>
+            <div class="b-title">カレンダー UI で全体把握</div>
+            <div class="b-desc">「来週の面談」「先月の振り返り」も予定をタップすれば録音・記録に直接ジャンプ。</div>
+          </div>
+          <div class="benefit-card">
+            <div class="b-label">データの一元管理</div>
+            <div class="b-title">録音・字幕は1アカウントに集約</div>
+            <div class="b-desc">複数アカウントに散らばらず、Drive の検索・バックアップ・権限管理が容易になります。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 対面・少人数会議への補足 -->
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>【対面面談・少人数会議の場合】</h3>
+        <p>対面でも同じ仕組みが使えます。管理者カレンダーで予定を登録しておき、タブレットまたはスマホ1台を録音端末としてテーブルに置き、当日その端末で予定をタップして Meet を起動するだけです。</p>
+        <div class="tip">
+          録音端末は管理者アカウントで開いておけば、終了後に管理者の Drive に自動保存されます。参加者個人のアカウントを使う必要はありません。
+        </div>
       </div>
     </div>
   </div>
@@ -355,7 +507,7 @@
       <div class="step-num">4</div>
       <div class="step-body">
         <h3>DriveのSheetsに記録を貼り付けて保存する</h3>
-        <p>上村が準備した「面談記録台帳（Sheets）」を開き、該当行に記録を貼り付けます。</p>
+        <p>弊社が準備した「面談記録台帳（Sheets）」を開き、該当行に記録を貼り付けます。</p>
         <ul>
           <li>Drive → 📁 面談記録 → 「面談記録台帳.xlsx」を開く</li>
           <li>新しい行に日付・利用者名・担当者・生成した記録内容を入力</li>
@@ -399,7 +551,7 @@
   </div>
 
   <div class="contact-box">
-    わからないことがあれば気軽にご連絡ください。
+    わからないことがあれば、お気軽にご連絡ください。<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.25);font-size:13px;line-height:1.9;"><strong>有限会社アートソウル</strong><br>📞 050-3529-6217（平日11:00〜18:00） ／ 📧 uemura@artsoul.jp</div>
   </div>
 
   <div class="nav-bar">

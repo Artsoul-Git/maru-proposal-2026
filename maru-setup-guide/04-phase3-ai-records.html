@@ -75,12 +75,16 @@
   .svg-fig { margin: 22px 0; text-align: center; }
   .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
+
+  /* 提案書本体への戻りボタン（基本ルール） */
+  .btn-back-proposal { display:inline-block; background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 100%); color:white !important; text-decoration:none; padding:7px 16px; border-radius:18px; font-size:12px; font-weight:700; box-shadow:0 2px 8px rgba(26,54,93,0.3); margin-right:10px; transition:all 0.2s; }
+  .btn-back-proposal:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(26,54,93,0.5); }
 </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div class="breadcrumb"><a href="../index.html">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
+  <div class="breadcrumb"><a href="../index.html" class="btn-back-proposal">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
   <div class="phase-label">Phase 3 ／ Month 2〜3</div>
   <h1>AI記録自動生成システムの使い方</h1>
   <div class="timing">面談テキストが自動でAIに送られ、記録の下書きが完成（アプリ④）</div>
@@ -89,7 +93,7 @@
 <div class="container">
 
   <div class="prereq">
-    <strong>前提条件：</strong>Phase 0〜2が完了・安定稼働していること。このシステムは上村がGAS（Google Apps Script）とGemini APIを使って構築します。このガイドは「使い方」のマニュアルです。技術的な設定は上村が担当します。
+    <strong>前提条件：</strong>Phase 0〜2が完了・安定稼働していること。このシステムは弊社がGAS（Google Apps Script）とGemini APIを使って構築します。このガイドは「使い方」のマニュアルです。技術的な設定は弊社が担当します。
   </div>
 
   <div class="summary-card">
@@ -154,7 +158,7 @@
       <div class="step-body">
         <h3>GASとは何か（簡単に）</h3>
         <p>GAS（Google Apps Script）とは、Google のサービスを自動で動かす仕組みです。たとえば「新しいファイルがDriveに保存されたら、自動でGeminiに送る」という動作を実現しています。</p>
-        <p>難しい設定は上村が行います。あなたはGASの存在を知っておくだけで大丈夫です。</p>
+        <p>難しい設定は弊社が行います。あなたはGASの存在を知っておくだけで大丈夫です。</p>
         <div class="tip">GASはGoogleのサーバー上で動くため、パソコンの電源が切れていても24時間自動で動き続けます。</div>
       </div>
     </div>
@@ -339,7 +343,7 @@
           <tr>
             <td>15分経っても通知が来ない</td>
             <td>GASの処理が遅延、またはMeetのトランスクリプト保存が未完了</td>
-            <td>20分待ってから上村に連絡。その間はMode A（Phase 0の手動方法）で対応</td>
+            <td>20分待ってから弊社サポートに連絡。その間はMode A（Phase 0の手動方法）で対応</td>
           </tr>
           <tr>
             <td>記録の内容が全然違う</td>
@@ -349,12 +353,12 @@
           <tr>
             <td>名前が「[USER_001]」のまま残っている</td>
             <td>アンマスク処理のエラー</td>
-            <td>手動で名前を入力して修正し、上村に報告</td>
+            <td>手動で名前を入力して修正し、弊社サポートに報告</td>
           </tr>
           <tr>
             <td>エラーメールが届いた</td>
             <td>GAS または Gemini API のエラー</td>
-            <td>メールを上村に転送。Mode Aで手動対応</td>
+            <td>メールを弊社サポートに転送。Mode Aで手動対応</td>
           </tr>
         </table>
 
@@ -400,16 +404,16 @@
         <p>まる様の中で、AIシステムの日常的な管理・運用を担当するスタッフを「AIマネージャー」と呼びます。技術的な知識がなくても大丈夫です。以下を担当します：</p>
         <ul>
           <li>毎週の記録生成状況を確認する（Sheetsの確認済み/未確認件数）</li>
-          <li>スタッフからの質問・困りごとをまとめて上村に報告する</li>
+          <li>スタッフからの質問・困りごとをまとめて弊社サポートに報告する</li>
           <li>月1回の改善MTGで「こうすればもっと使いやすくなる」という提案を出す</li>
         </ul>
-        <div class="ok">6か月後には「ほぼ独力で運用改善できる」状態を目指します。上村が毎月のMTGでサポートします。</div>
+        <div class="ok">6か月後には「ほぼ独力で運用改善できる」状態を目指します。弊社が毎月のMTGでサポートします。</div>
       </div>
     </div>
   </div>
 
   <div class="contact-box">
-    わからないことがあれば気軽にご連絡ください。
+    わからないことがあれば、お気軽にご連絡ください。<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.25);font-size:13px;line-height:1.9;"><strong>有限会社アートソウル</strong><br>📞 050-3529-6217（平日11:00〜18:00） ／ 📧 uemura@artsoul.jp</div>
   </div>
 
   <div class="nav-bar">

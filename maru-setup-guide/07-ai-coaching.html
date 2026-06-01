@@ -77,12 +77,16 @@
     transition: all 0.2s; }
   .copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
   .copy-btn.copied { background: #38A169; border-color: #38A169; color: white; }
+
+  /* 提案書本体への戻りボタン（基本ルール） */
+  .btn-back-proposal { display:inline-block; background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 100%); color:white !important; text-decoration:none; padding:7px 16px; border-radius:18px; font-size:12px; font-weight:700; box-shadow:0 2px 8px rgba(26,54,93,0.3); margin-right:10px; transition:all 0.2s; }
+  .btn-back-proposal:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(26,54,93,0.5); }
 </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div class="breadcrumb"><a href="../index.html">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
+  <div class="breadcrumb"><a href="../index.html" class="btn-back-proposal">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
   <div class="phase-label">オプション③ ／ 月4回・第1段階〜</div>
   <h1>AIコーチングセッション準備と進め方</h1>
   <div class="timing">月1回訪問（2時間）＋ オンライン3回（各1時間）</div>
@@ -93,7 +97,7 @@
   <div class="summary-card">
     <h2>AIコーチングとは何か</h2>
     <ul>
-      <li>上村が毎月4回（訪問1回＋オンライン3回）まる様に伴走するセッションです</li>
+      <li>弊社が毎月4回（訪問1回＋オンライン3回）まる様に伴走するセッションです</li>
       <li>「AIを使ってどう業務を改善するか」をAIマネージャーと一緒に考えます</li>
       <li>正解を教えるのではなく「自分で考えて改善できる力」を育てるOJT形式です</li>
       <li>準備5分・セッション1時間で、毎月確実に業務が改善されます</li>
@@ -151,7 +155,7 @@
           <div class="session-card session-visit">
             <h3>🏢 月1回 訪問セッション（2時間）</h3>
             <ul>
-              <li>現場に上村が伺います</li>
+              <li>現場に弊社が伺います</li>
               <li>実際の業務を一緒に確認</li>
               <li>スタッフ全員が参加可能</li>
               <li>その場でアプリ操作・Gemini活用を体験</li>
@@ -161,7 +165,7 @@
           <div class="session-card session-online">
             <h3>💻 月3回 オンラインセッション（各1時間）</h3>
             <ul>
-              <li>Google MeetでAIマネージャー + 上村</li>
+              <li>Google MeetでAIマネージャー + 弊社担当</li>
               <li>週次レポートをもとに進捗確認</li>
               <li>困っていることへのアドバイス</li>
               <li>プロンプト改善・新しい使い方の提案</li>
@@ -232,7 +236,7 @@
       <div class="step-body">
         <h3>Google Meetの準備（オンラインセッション前）</h3>
         <ol>
-          <li>上村から届くMeet招待リンクをクリック（Googleカレンダーにも表示されます）</li>
+          <li>弊社から届くMeet招待リンクをクリック（Googleカレンダーにも表示されます）</li>
           <li>カメラ・マイクが使えることを確認する（前日までに動作確認推奨）</li>
           <li>週次レポートをDriveで開いておく（画面共有して見せます）</li>
           <li>メモ用のGoogle Docsを1つ開いておく（セッション中のメモ用）</li>
@@ -255,7 +259,7 @@
         <h3>標準的な1時間の進め方</h3>
         <ol>
           <li style="margin-bottom:10px"><strong>最初の10分：先週のレポート共有</strong><br>
-            AIマネージャーが週次レポートを見せながら、よかったこと・困ったことを話します。上村が質問しながら深掘りします。</li>
+            AIマネージャーが週次レポートを見せながら、よかったこと・困ったことを話します。弊社が質問しながら深掘りします。</li>
           <li style="margin-bottom:10px"><strong>次の30分：困っていることを解決する</strong><br>
             困っていることを一緒に解決します。プロンプトの改善・アプリの使い方・Geminiへの指示方法など。「やってみる」を重視します。</li>
           <li style="margin-bottom:10px"><strong>次の15分：来週のアクションを決める</strong><br>
@@ -263,7 +267,7 @@
           <li><strong>最後の5分：まとめ・メモ確認</strong><br>
             決めたアクションをGoogle Docsにメモして確認。次回セッションの日程を確認して終了。</li>
         </ol>
-        <div class="tip">上村が一方的に教える形式ではなく、AIマネージャーが「気づく・試す・報告する」サイクルを回す形式です。</div>
+        <div class="tip">弊社が一方的に教える形式ではなく、AIマネージャーが「気づく・試す・報告する」サイクルを回す形式です。</div>
       </div>
     </div>
   </div>
@@ -298,7 +302,7 @@
           <h3>AIマネージャーが使えるプロンプト例</h3>
           <p>「就労継続支援B型施設のスタッフです。毎月の国保連書類作成に2〜3時間かかっています。Google SheetsとGeminiを使って効率化するアイデアを3つ教えてください。」</p>
         </div>
-        <div class="ok">Geminiに相談したアイデアをそのままコーチングセッションで上村に見せてください。一緒に「本当に使えるか」を判断します。</div>
+        <div class="ok">Geminiに相談したアイデアをそのままコーチングセッションで弊社サポートに見せてください。一緒に「本当に使えるか」を判断します。</div>
       </div>
     </div>
 
@@ -311,7 +315,7 @@
         <ul>
           <li>「Geminiへのプロンプトをこう変えたら記録が早くなった」</li>
           <li>「Driveのフォルダ名をこう変えたら探しやすくなった」</li>
-          <li>「アプリのこのボタンを変えてほしい（上村に要望）」</li>
+          <li>「アプリのこのボタンを変えてほしい（弊社サポートに要望）」</li>
         </ul>
         <div class="tip">「自分で気づいて提案した改善」は、コーチングセッションで必ず取り上げます。小さな成功体験が「AIが使える」という自信になります。</div>
       </div>
@@ -376,7 +380,7 @@
       <div class="step-num">–</div>
       <div class="step-body">
         <h3>第2段階への移行判定基準</h3>
-        <p>3か月目の最終コーチングセッションで、上村が以下を確認して第2段階（定着期）へ移行を判断します：</p>
+        <p>3か月目の最終コーチングセッションで、弊社が以下を確認して第2段階（定着期）へ移行を判断します：</p>
         <ul>
           <li>全4アプリが本番稼働していること</li>
           <li>AIマネージャーが「ひとりでアプリを使って記録できる」状態であること</li>
@@ -389,7 +393,7 @@
   </div>
 
   <div class="contact-box">
-    コーチングセッションの日程調整はご連絡いたします。
+    コーチングセッションの日程調整はご連絡いたします。<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.25);font-size:13px;line-height:1.9;"><strong>有限会社アートソウル</strong><br>📞 050-3529-6217（平日11:00〜18:00） ／ 📧 uemura@artsoul.jp</div>
   </div>
 
   <div class="nav-bar">

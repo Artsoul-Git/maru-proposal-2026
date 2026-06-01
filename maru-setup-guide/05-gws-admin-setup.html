@@ -37,7 +37,7 @@
   .step-body ul,ol{padding-left:20px;margin:8px 0}
   .step-body li{font-size:14px;color:#4A5568;margin-bottom:4px}
   .role-tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px}
-  .role-uemura{background:#EBF8FF;color:#2B6CB0}
+  .role-vendor{background:#EBF8FF;color:#2B6CB0}
   .role-maru{background:#F0FFF4;color:#276749}
   .role-both{background:#FAF5FF;color:#553C9A}
   .folder-tree{background:#1A202C;border-radius:10px;padding:20px;margin:12px 0;font-family:Consolas,monospace;font-size:13px;color:#A0AEC0;line-height:2}
@@ -71,21 +71,25 @@
     transition: all 0.2s; }
   .copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
   .copy-btn.copied { background: #38A169; border-color: #38A169; color: white; }
+
+  /* 提案書本体への戻りボタン（基本ルール） */
+  .btn-back-proposal { display:inline-block; background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 100%); color:white !important; text-decoration:none; padding:7px 16px; border-radius:18px; font-size:12px; font-weight:700; box-shadow:0 2px 8px rgba(26,54,93,0.3); margin-right:10px; transition:all 0.2s; }
+  .btn-back-proposal:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(26,54,93,0.5); }
 </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div class="breadcrumb"><a href="../index.html">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
+  <div class="breadcrumb"><a href="../index.html" class="btn-back-proposal">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
   <div class="phase-label">オプション① ／ Week 1〜2</div>
   <h1>GWS管理者設定 ＋ Driveフォルダ整備</h1>
-  <div class="timing">上村が設定・まる様管理者が確認するガイドです</div>
+  <div class="timing">弊社が設定・まる様管理者が確認するガイドです</div>
 </div>
 
 <div class="container">
 
   <div class="prereq">
-    <strong>このガイドの使い方：</strong>各ステップに「上村が行う」「まる様管理者が行う」のタグを付けています。まる様側の担当者は <span style="background:#F0FFF4;color:#276749;font-weight:700;padding:1px 6px;border-radius:4px;">まる様</span> のタグが付いた手順を実施してください。
+    <strong>このガイドの使い方：</strong>各ステップに「弊社が行う」「まる様管理者が行う」のタグを付けています。まる様側の担当者は <span style="background:#F0FFF4;color:#276749;font-weight:700;padding:1px 6px;border-radius:4px;">まる様</span> のタグが付いた手順を実施してください。
   </div>
 
   <div class="summary-card">
@@ -104,9 +108,9 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 210" width="640" font-family="Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo,sans-serif">
       <rect width="640" height="210" rx="12" fill="#F7FAFC"/>
       <text x="320" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1A365D">アカウント権限の階層構成</text>
-      <!-- 上村（最高権限） -->
+      <!-- 弊社（最高権限） -->
       <rect x="210" y="40" width="220" height="44" rx="8" fill="#1A365D"/>
-      <text x="320" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#90CDF4">上村（システム管理・設定担当）</text>
+      <text x="320" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#90CDF4">アートソウル（システム管理・設定担当）</text>
       <text x="320" y="76" text-anchor="middle" font-size="10" fill="#BEE3F8">GWS管理者コンソール権限 / API設定</text>
       <!-- ライン -->
       <line x1="260" y1="84" x2="160" y2="118" stroke="#CBD5E0" stroke-width="2"/>
@@ -139,9 +143,9 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="role-tag role-uemura">上村が実施</div>
+        <div class="role-tag role-vendor">弊社が実施</div>
         <h3>GWSアカウントの発行・設定</h3>
-        <p>上村が管理者コンソールで3アカウントを作成し、権限設定を行います。以下が完了したら各アカウント情報をまる様にお渡しします：</p>
+        <p>弊社が管理者コンソールで3アカウントを作成し、権限設定を行います。以下が完了したら各アカウント情報をまる様にお渡しします：</p>
         <ul>
           <li>3アカウントの作成（管理者1名 + AIマネージャー候補2名）</li>
           <li>Google Workspace Business Standard プランの設定確認</li>
@@ -156,7 +160,7 @@
       <div class="step-body">
         <div class="role-tag role-maru">まる様が実施</div>
         <h3>受け取ったアカウントにログインする</h3>
-        <p>上村からお渡しするアカウント情報（メールアドレス・仮パスワード）でChromeからログインしてください。</p>
+        <p>弊社からお渡しするアカウント情報（メールアドレス・仮パスワード）でChromeからログインしてください。</p>
         <ol>
           <li>Chromeを開き、右上の人型アイコン → 「別のアカウントを追加」</li>
           <li>お渡ししたメールアドレスを入力</li>
@@ -194,9 +198,9 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="role-tag role-uemura">上村が実施</div>
+        <div class="role-tag role-vendor">弊社が実施</div>
         <h3>フォルダ構成の作成・共有設定</h3>
-        <p>上村が以下の構成でDriveフォルダを作成し、3アカウントに共有します：</p>
+        <p>弊社が以下の構成でDriveフォルダを作成し、3アカウントに共有します：</p>
         <div class="folder-tree">
           <span class="folder">📁 まる_業務共有フォルダ/</span><br>
           &nbsp;&nbsp;<span class="folder">📁 利用者台帳/</span><br>
@@ -224,7 +228,7 @@
         <div class="role-tag role-maru">まる様が実施</div>
         <h3>フォルダへのアクセスを確認する</h3>
         <p><code>drive.google.com</code> を開き、「共有アイテム」または「マイドライブ」に「まる_業務共有フォルダ」が表示されているか確認してください。</p>
-        <div class="ok">フォルダが見えれば共有設定は完了です。見えない場合は上村に連絡してください。</div>
+        <div class="ok">フォルダが見えれば共有設定は完了です。見えない場合は弊社サポートに連絡してください。</div>
         <div class="tip">よく使うフォルダは右クリック → 「ショートカットをマイドライブに追加」で素早くアクセスできます。</div>
       </div>
     </div>
@@ -300,9 +304,9 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="role-tag role-both">上村 + まる様</div>
+        <div class="role-tag role-both">弊社 ＋ まる様</div>
         <h3>テスト会議で文字起こしを動かす</h3>
-        <p>上村との初回ミーティングで、実際にMeet文字起こしを体験します。以下を確認してください：</p>
+        <p>弊社担当との初回ミーティングで、実際にMeet文字起こしを体験します。以下を確認してください：</p>
         <ol>
           <li><code>meet.google.com</code> を開いて「新しい会議」を作成</li>
           <li>画面下部「その他のオプション（…）」→ 「文字起こし」→「文字起こしを開始」</li>
@@ -311,7 +315,7 @@
           <li>5〜10分後に Drive → 「Meetの録音と文字起こし」にファイルが作成されることを確認</li>
         </ol>
         <div class="ok">Google Docsファイルが自動保存されれば設定は正常です！</div>
-        <div class="note">「文字起こし」メニューが表示されない場合は管理者コンソールで機能が有効化されているか確認が必要です。上村に連絡してください。</div>
+        <div class="note">「文字起こし」メニューが表示されない場合は管理者コンソールで機能が有効化されているか確認が必要です。弊社サポートに連絡してください。</div>
       </div>
     </div>
   </div>
@@ -326,9 +330,9 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <div class="role-tag role-uemura">上村が実施</div>
+        <div class="role-tag role-vendor">弊社が実施</div>
         <h3>Driveにプロンプトテンプレートを設置</h3>
-        <p>上村が以下のテンプレートをDriveの「プロンプトテンプレート」フォルダに設置します：</p>
+        <p>弊社が以下のテンプレートをDriveの「プロンプトテンプレート」フォルダに設置します：</p>
         <ul>
           <li>面談記録テンプレート（サービス提供記録・相談支援記録・議事録 各種）</li>
           <li>個別支援計画書下書きテンプレート</li>
@@ -389,13 +393,13 @@
           <li>「パスワードをリセット」→ 仮パスワードを設定して本人に伝える</li>
           <li>本人が次のログイン時に新しいパスワードに変更する</li>
         </ol>
-        <div class="tip">管理者コンソールの操作が不明な場合は上村に連絡してください。</div>
+        <div class="tip">管理者コンソールの操作が不明な場合は弊社サポートに連絡してください。</div>
       </div>
     </div>
   </div>
 
   <div class="contact-box">
-    わからないことがあれば気軽にご連絡ください。
+    わからないことがあれば、お気軽にご連絡ください。<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.25);font-size:13px;line-height:1.9;"><strong>有限会社アートソウル</strong><br>📞 050-3529-6217（平日11:00〜18:00） ／ 📧 uemura@artsoul.jp</div>
   </div>
 
   <div class="nav-bar">

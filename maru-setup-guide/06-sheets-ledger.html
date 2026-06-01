@@ -68,12 +68,16 @@
   .svg-fig { margin: 22px 0; text-align: center; }
   .svg-fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   .svg-fig figcaption { font-size: 12px; color: #718096; margin-top: 8px; font-style: italic; }
+
+  /* 提案書本体への戻りボタン（基本ルール） */
+  .btn-back-proposal { display:inline-block; background:linear-gradient(135deg,#1A365D 0%,#2B6CB0 100%); color:white !important; text-decoration:none; padding:7px 16px; border-radius:18px; font-size:12px; font-weight:700; box-shadow:0 2px 8px rgba(26,54,93,0.3); margin-right:10px; transition:all 0.2s; }
+  .btn-back-proposal:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(26,54,93,0.5); }
 </style>
 </head>
 <body>
 
 <div class="top-bar">
-  <div class="breadcrumb"><a href="../index.html">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
+  <div class="breadcrumb"><a href="../index.html" class="btn-back-proposal">📄 提案書本体に戻る</a>　｜　<a href="index.html">← 総合ガイドに戻る</a></div>
   <div class="phase-label">オプション① 続き ／ Week 1〜常時</div>
   <h1>利用者台帳・Google Sheets 操作ガイド</h1>
   <div class="timing">台帳の構成・日常操作・国保連テンプレートの使い方</div>
@@ -82,7 +86,7 @@
 <div class="container">
 
   <div class="prereq">
-    <strong>前提条件：</strong>GWS管理者設定ガイド（オプション①）が完了し、上村から台帳ファイルが共有されていること。
+    <strong>前提条件：</strong>GWS管理者設定ガイド（オプション①）が完了し、弊社から台帳ファイルが共有されていること。
   </div>
 
   <div class="summary-card">
@@ -258,7 +262,7 @@
           <li>「②出退勤記録」タブをクリック</li>
           <li>今日の日付の行を探す（行は日付順に並んでいます）</li>
           <li>全利用者の出退勤が記録されているか確認する</li>
-          <li>打刻漏れがある場合は上村に連絡するか、該当セルに手動入力</li>
+          <li>打刻漏れがある場合は弊社サポートに連絡するか、該当セルに手動入力</li>
         </ol>
         <div class="tip">管理者は毎日15〜16時に確認する習慣をつけると、退勤漏れを当日中に確認できます。</div>
       </div>
@@ -271,10 +275,10 @@
         <p>毎月月末（または翌月1〜3日）に行う作業です：</p>
         <ol>
           <li>「④国保連集計」タブをクリック</li>
-          <li>月末処理ボタン（上村が設置するGASボタン）をクリック → 自動で当月データが集計される</li>
+          <li>月末処理ボタン（弊社が設置するGASボタン）をクリック → 自動で当月データが集計される</li>
           <li>集計結果をざっと確認（利用日数・時間が実績と合っているか）</li>
           <li>「国保連書類」フォルダの「実績記録票テンプレート.xlsx」を開く</li>
-          <li>集計データを実績記録票に転記する（または上村が作成したマクロで自動転記）</li>
+          <li>集計データを実績記録票に転記する（または弊社が作成したマクロで自動転記）</li>
         </ol>
         <div class="ok">第2段階（4か月目〜）からはGASで国保連PDF自動変換まで対応します。第1段階はSheetsへの転記のみで進めます。</div>
       </div>
@@ -404,7 +408,7 @@
       <div class="step-num">Q</div>
       <div class="step-body">
         <h3>数式が壊れた（エラーが出た）</h3>
-        <p>#REF! や #VALUE! などのエラーが出たら上村に連絡してください。数式は上村が管理します。セルを空白にして保存しておいてください。</p>
+        <p>#REF! や #VALUE! などのエラーが出たら弊社サポートに連絡してください。数式は弊社が管理します。セルを空白にして保存しておいてください。</p>
       </div>
     </div>
 
@@ -418,7 +422,7 @@
   </div>
 
   <div class="contact-box">
-    わからないことがあれば気軽にご連絡ください。
+    わからないことがあれば、お気軽にご連絡ください。<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.25);font-size:13px;line-height:1.9;"><strong>有限会社アートソウル</strong><br>📞 050-3529-6217（平日11:00〜18:00） ／ 📧 uemura@artsoul.jp</div>
   </div>
 
   <div class="nav-bar">
